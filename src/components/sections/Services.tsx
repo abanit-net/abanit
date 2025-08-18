@@ -53,7 +53,7 @@ const services = [
 interface Service {
   title: string;
   description: string;
-  icon: React.ComponentType;
+  icon: React.ComponentType<{ className?: string }>;
   href: string;
   color: string;
 }
