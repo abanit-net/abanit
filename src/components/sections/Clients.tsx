@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import "@/styles/circuit.css"
 
@@ -148,7 +147,7 @@ export function Clients() {
                 <HoverCardContent className="w-80 p-0">
                   <div className="p-6">
                     <blockquote className="text-sm text-muted-foreground leading-relaxed">
-                      "{client.testimonial}"
+                      &ldquo;{client.testimonial}&rdquo;
                     </blockquote>
                   </div>
                 </HoverCardContent>

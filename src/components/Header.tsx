@@ -1,9 +1,10 @@
 "use client"
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { Phone, Menu, Home, Blocks, Info, Image, MessageCircle, X } from "lucide-react";
+import { Phone, Menu, Home, Blocks, Info, Image as ImageIcon, MessageCircle } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -95,10 +96,12 @@ export function Header() {
               <DialogContent className="sm:max-w-[400px] p-0 gap-0 rounded-3xl">
                 <DialogHeader className="p-6 text-center relative border-b">
                   <DialogTitle className="flex justify-center">
-                    <img 
+                    <Image 
                       src="/img/Abanit_18-01.png" 
                       alt="آبانیت" 
-                      className="w-24 h-8 object-contain"
+                      width={96}
+                      height={32}
+                      className="object-contain"
                     />
                   </DialogTitle>
                 </DialogHeader>
