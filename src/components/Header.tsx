@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { Phone, Menu, Home, Blocks, Info, Image as ImageIcon, MessageCircle } from "lucide-react";
+import { Phone, Menu, Home, Blocks, Info, ImageIcon, MessageCircle } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -17,7 +17,7 @@ const menuItems = [
   { title: "خانه", href: "/", icon: Home },
   { title: "خدمات", href: "#services", icon: Blocks },
   { title: "درباره ما", href: "#about", icon: Info },
-  { title: "نمونه کارها", href: "#portfolio", icon: Image },
+  { title: "نمونه کارها", href: "#portfolio", icon: ImageIcon },
   { title: "تماس", href: "#contact", icon: MessageCircle },
 ];
 
@@ -45,9 +45,11 @@ export function Header() {
         <div className="hidden md:flex items-center justify-between w-full">
           {/* Logo */}
           <Link href="/" className="relative w-24 h-8">
-            <img 
+            <Image 
               src="/img/Abanit_18-01.png" 
               alt="آبانیت" 
+              width={96}
+              height={32}
               className="w-full h-full object-contain"
             />
           </Link>
@@ -138,9 +140,11 @@ export function Header() {
 
           {/* Center: Logo */}
           <Link href="/" className="relative w-20 h-7 justify-self-center">
-            <img 
+            <Image 
               src="/img/Abanit_18-01.png" 
               alt="آبانیت" 
+              width={80}
+              height={28}
               className="w-full h-full object-contain"
             />
           </Link>
