@@ -3,21 +3,21 @@ import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { Phone, Menu } from "lucide-react";
+import { Phone, Menu, Home, Blocks, Info, Image, MessageCircle, X } from "lucide-react";
 import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const menuItems = [
-  { title: "خانه", href: "/" },
-  { title: "خدمات", href: "#services" },
-  { title: "درباره ما", href: "#about" },
-  { title: "نمونه کارها", href: "#portfolio" },
-  { title: "تماس", href: "#contact" },
+  { title: "خانه", href: "/", icon: Home },
+  { title: "خدمات", href: "#services", icon: Blocks },
+  { title: "درباره ما", href: "#about", icon: Info },
+  { title: "نمونه کارها", href: "#portfolio", icon: Image },
+  { title: "تماس", href: "#contact", icon: MessageCircle },
 ];
 
 export function Header() {
@@ -32,7 +32,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-6">
+    <header className="fixed top-0 left-0 right-0 z-50 md:p-6 p-4">
       <div
         className={`mx-auto max-w-6xl flex items-center justify-between h-14 rounded-2xl px-6 transition-all duration-300 ${
           isScrolled 
@@ -74,57 +74,69 @@ export function Header() {
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center justify-between w-full gap-4">
           <Button
             size="sm"
-            className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-4 flex items-center gap-2"
+            className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-4 flex items-center gap-2 order-3"
           >
             <Phone className="h-4 w-4" />
             تماس
           </Button>
-          <ThemeToggle />
-          <Sheet>
-            <SheetTrigger asChild>
+
+          <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60 order-2">
+            آبانیت
+          </span>
+
+          <Dialog>
+            <DialogTrigger asChild>
               <Button
                 variant="ghost"
                 size="icon"
-                className="relative hover:bg-primary/5 rounded-xl h-9 w-9"
+                className="relative hover:bg-primary/5 rounded-xl h-9 w-9 order-1"
               >
-                <Menu className="h-5 w-5" />
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 7H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M4 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
               </Button>
-            </SheetTrigger>
-            <SheetContent 
-              side="right"
-              className="w-[300px] p-0"
-            >
-              <SheetHeader className="p-6 border-b">
-                <SheetTitle className="text-right text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[400px] p-0 gap-0 rounded-3xl">
+              <DialogHeader className="p-6 text-center relative border-b">
+                <DialogTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
                   آبانیت
-                </SheetTitle>
-              </SheetHeader>
-              <div className="py-6 px-4 flex flex-col items-stretch gap-2">
-                <nav className="flex flex-col items-stretch gap-1 w-full">
-                  {menuItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="w-full px-4 py-2.5 text-right text-sm font-medium text-foreground/70 hover:text-primary rounded-lg hover:bg-primary/5 transition-colors flex items-center justify-end gap-2"
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
+                </DialogTitle>
+              </DialogHeader>
+              <div className="p-6 flex flex-col items-stretch gap-6">
+                <nav className="flex flex-col items-stretch gap-2 w-full">
+                  {menuItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="w-full px-4 py-3 text-right text-sm font-medium text-foreground/70 hover:text-primary rounded-xl hover:bg-primary/5 transition-all flex items-center justify-end gap-3 hover:gap-4"
+                        onClick={() => (document.querySelector('[role="dialog"] button[aria-label="Close"]') as HTMLButtonElement)?.click()}
+                      >
+                        {item.title}
+                        <Icon className="h-5 w-5" />
+                      </Link>
+                    );
+                  })}
                 </nav>
-                <div className="mt-4 space-y-2">
+                <div className="flex items-center justify-between gap-4 pt-4 border-t">
                   <Button
-                    className="w-full bg-primary/10 hover:bg-primary/20 text-primary rounded-xl flex items-center justify-center gap-2"
+                    className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl flex items-center justify-center gap-2"
                   >
                     <Phone className="h-4 w-4" />
                     تماس با ما
                   </Button>
+                  <ThemeToggle />
                 </div>
               </div>
-            </SheetContent>
-          </Sheet>
+            </DialogContent>
+          </Dialog>
+
         </div>
       </div>
     </header>

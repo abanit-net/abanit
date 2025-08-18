@@ -104,7 +104,7 @@ function ServiceCard({ service }: { service: Service }) {
       whileHover={{ scale: 1.02 }}
     >
       <Link href={service.href}>
-        <div className="relative overflow-hidden rounded-[2rem] p-6 h-full bg-background/80 backdrop-blur-xl border border-primary/10 shadow-2xl group">
+        <div className="relative overflow-hidden rounded-[2rem] p-6 h-full bg-background/80 backdrop-blur-xl border border-primary/10 shadow-sm group">
           {/* Animated glow effect */}
           <div
             className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500"
