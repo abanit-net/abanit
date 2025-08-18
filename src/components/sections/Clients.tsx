@@ -1,107 +1,161 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { ScrollArea } from "@/components/ui/scroll-area";
+"use client"
+
+import { motion } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
+import "@/styles/circuit.css"
 
 const clients = [
   {
     name: "شرکت الف",
-    role: "مدیرعامل",
+    role: "صنعت نرم‌افزار",
     person: "علی محمدی",
+    position: "مدیرعامل",
     testimonial: "همکاری با تیم آبانیت باعث رشد چشمگیر کسب و کار ما شد. استفاده از راهکارهای هوشمند و خلاقانه آن‌ها، مسیر موفقیت ما را هموار کرد.",
-    logo: (
-      <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M3 21H21M6 18V10M10 18V10M14 18V10M18 18V10M20 7L12.424 2.265C12.2702 2.16236 12.0874 2.10876 11.9013 2.10876C11.7152 2.10876 11.5324 2.16236 11.3786 2.265L4 7H20Z"
-          className="stroke-primary"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    image: "/img/client1.png",
+    stats: {
+      growth: "+۱۵۰٪",
+      time: "۶ ماه",
+      satisfaction: "۹۸٪"
+    }
   },
   {
     name: "شرکت ب",
-    role: "مدیر فنی",
+    role: "فین‌تک",
     person: "مریم احمدی",
+    position: "مدیر فنی",
     testimonial: "کیفیت خدمات و پشتیبانی عالی آبانیت برای ما ارزشمند است. تیم متخصص و متعهد آن‌ها همیشه آماده کمک و ارائه راهکارهای مناسب هستند.",
-    logo: (
-      <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z"
-          className="stroke-primary"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M16 21V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V21"
-          className="stroke-primary"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    image: "/img/client2.png",
+    stats: {
+      growth: "+۲۰۰٪",
+      time: "۳ ماه",
+      satisfaction: "۱۰۰٪"
+    }
   },
   {
     name: "شرکت ج",
-    role: "مدیر بازاریابی",
+    role: "خرده‌فروشی آنلاین",
     person: "رضا کریمی",
+    position: "مدیر بازاریابی",
     testimonial: "راهکارهای هوشمند آبانیت به ما در توسعه بازار کمک کرد. استراتژی‌های دیجیتال مارکتینگ و SEO آن‌ها نتایج فوق‌العاده‌ای برای ما به همراه داشت.",
-    logo: (
-      <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M3 3H21M3 9H21M3 15H21M3 21H21"
-          className="stroke-primary"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    image: "/img/client3.png",
+    stats: {
+      growth: "+۸۰٪",
+      time: "۴ ماه",
+      satisfaction: "۹۵٪"
+    }
   },
+  {
+    name: "شرکت د",
+    role: "هوش مصنوعی",
+    person: "سارا محمودی",
+    position: "مدیر محصول",
+    testimonial: "همکاری با آبانیت تجربه‌ای فوق‌العاده بود. تیم آن‌ها با درک عمیق از نیازهای ما و ارائه راهکارهای نوآورانه، به ما در دستیابی به اهدافمان کمک کردند.",
+    image: "/img/client4.png",
+    stats: {
+      growth: "+۱۲۰٪",
+      time: "۸ ماه",
+      satisfaction: "۹۷٪"
+    }
+  }
 ];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
 
 export function Clients() {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground">
-            نظرات مشتریان
+    <section className="relative py-32 circuit-background overflow-hidden">
+      {/* Glass Overlay */}
+      <div className="absolute inset-0 bg-background/30 backdrop-blur-sm" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
+            مشتریان ما
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            آنچه مشتریان ما درباره همکاری با آبانیت می‌گویند
+            داستان موفقیت برندهایی که به ما اعتماد کردند
           </p>
-        </div>
-        <ScrollArea className="w-full">
-          <div className="flex space-x-8 pb-8 px-4">
-            {clients.map((client) => (
-              <Card key={client.name} className="min-w-[400px] hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-4 space-x-reverse">
-                      <div className="p-2 bg-primary/5 rounded-xl">
-                        {client.logo}
-                      </div>
+        </motion.div>
+        
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          {clients.map((client) => (
+            <motion.div
+              key={client.name}
+              variants={item}
+              className="group"
+            >
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <div className="client-card rounded-2xl p-6 cursor-pointer">
+                    <div className="flex items-center justify-between mb-4">
                       <div>
                         <h3 className="font-semibold text-lg">{client.name}</h3>
                         <p className="text-sm text-muted-foreground">{client.role}</p>
                       </div>
+                      <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-primary/50" />
+                      </div>
+                    </div>
+
+                    <div className="mt-6 grid grid-cols-3 gap-4 p-4 bg-muted/30 rounded-xl">
+                      <div className="text-center">
+                        <div className="text-primary font-bold">{client.stats.growth}</div>
+                        <div className="text-xs text-muted-foreground mt-1">رشد</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-primary font-bold">{client.stats.time}</div>
+                        <div className="text-xs text-muted-foreground mt-1">زمان</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-primary font-bold">{client.stats.satisfaction}</div>
+                        <div className="text-xs text-muted-foreground mt-1">رضایت</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 flex items-center justify-between text-sm">
+                      <div className="font-medium">{client.person}</div>
+                      <div className="text-muted-foreground">{client.position}</div>
                     </div>
                   </div>
-                  <Separator className="mb-6" />
-                  <blockquote className="text-muted-foreground">
-                    {client.testimonial}
-                  </blockquote>
-                  <div className="mt-6 text-sm font-medium">
-                    {client.person}
+                </HoverCardTrigger>
+                <HoverCardContent className="w-80 p-0">
+                  <div className="p-6">
+                    <blockquote className="text-sm text-muted-foreground leading-relaxed">
+                      "{client.testimonial}"
+                    </blockquote>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </ScrollArea>
+                </HoverCardContent>
+              </HoverCard>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

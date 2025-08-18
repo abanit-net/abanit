@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { Clients } from "@/components/sections/Clients";
+import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/sections/Footer";
 import "../styles/animations.css";
 
@@ -16,6 +17,10 @@ export default function Home() {
         <Clients />
         <div className="absolute inset-0 bg-gradient-to-b from-background to-transparent h-32" />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background to-transparent h-32" />
+      </div>
+      <div className="relative">
+        <FAQ />
+        <div className="absolute inset-0 hero-gradient opacity-20 pointer-events-none" />
       </div>
       <Footer />
     </div>
