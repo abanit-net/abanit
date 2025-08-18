@@ -1,0 +1,53 @@
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes circuit {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes galaxy {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.8; }
+  50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.animate-circuit path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: circuit 3s ease-out forwards;
+}
+
+.animate-galaxy {
+  animation: galaxy 20s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #007AFF, #00F0FF);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% 50%,
+    rgba(0, 122, 255, 0.1) 0%,
+    rgba(0, 240, 255, 0.05) 25%,
+    transparent 50%
+  );
+}

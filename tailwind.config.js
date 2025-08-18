@@ -16,7 +16,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        vazirmatn: ["Vazirmatn", "sans-serif"],
+        sans: ["SF", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

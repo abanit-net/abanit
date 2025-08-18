@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 72.2% 50.6%;
-    --primary-foreground: 0 85.7% 97.3%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --background: 180 20% 99%;
+    --foreground: 190 95% 5%;
+    --card: 180 25% 98%;
+    --card-foreground: 190 95% 5%;
+    --popover: 180 25% 98%;
+    --popover-foreground: 190 95% 5%;
+    --primary: 180 100% 45%;
+    --primary-foreground: 180 25% 98%;
+    --secondary: 190 50% 95%;
+    --secondary-foreground: 190 95% 5%;
+    --muted: 180 25% 96%;
+    --muted-foreground: 190 40% 40%;
+    --accent: 180 100% 45%;
+    --accent-foreground: 180 25% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 72.2% 50.6%;
-    --radius: 0.5rem;
+    --border: 180 30% 93%;
+    --input: 180 30% 93%;
+    --ring: 180 100% 45%;
+    --radius: 1rem;
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 72.2% 50.6%;
-    --primary-foreground: 0 85.7% 97.3%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 190 50% 3.9%;
+    --foreground: 180 25% 98%;
+    --card: 190 50% 3.9%;
+    --card-foreground: 180 25% 98%;
+    --popover: 190 50% 3.9%;
+    --popover-foreground: 180 25% 98%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 180 25% 98%;
+    --secondary: 190 50% 14.9%;
+    --secondary-foreground: 180 25% 98%;
+    --muted: 190 50% 14.9%;
+    --muted-foreground: 180 25% 63.9%;
+    --accent: 180 100% 45%;
+    --accent-foreground: 180 25% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 72.2% 50.6%;
+    --destructive-foreground: 180 25% 98%;
+    --border: 190 50% 14.9%;
+    --input: 190 50% 14.9%;
+    --ring: 180 100% 50%;
   }
 }
 
@@ -54,9 +54,54 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-[vazirmatn];
+    @apply bg-background text-foreground font-[SF];
   }
 }
 
-/* Import Vazirmatn font */
-@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: 'SF';
+  src: url('/font/sf.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@layer components {
+  .gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to left, hsl(var(--primary)), hsl(var(--primary) / 0.6));
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-2%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-out forwards;
+  }
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
