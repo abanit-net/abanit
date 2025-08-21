@@ -139,7 +139,7 @@ function ServiceCard({ service }: { service: Service }) {
 
 export function Services() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">خدمات ما</h2>

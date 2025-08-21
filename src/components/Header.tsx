@@ -33,9 +33,9 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 md:p-6 px-4 pt-4" dir="rtl">
+    <header className="fixed top-0 left-0 right-0 z-50 p-4" dir="rtl">
       <div
-        className={`mx-auto max-w-6xl flex items-center justify-between h-14 rounded-2xl px-6 transition-all duration-300 ${
+        className={`mx-auto max-w-6xl flex items-center justify-between h-14 rounded-2xl px-4 md:px-6 transition-all duration-300 ${
           isScrolled 
             ? "bg-background/60 backdrop-blur-lg shadow-sm border border-primary/5" 
             : "bg-transparent"
@@ -81,7 +81,7 @@ export function Header() {
         </div>
 
         {/* Mobile Header */}
-        <div className="md:hidden grid grid-cols-3 items-center w-full">
+        <div className="md:hidden grid grid-cols-3 items-center w-full gap-2">
           {/* Right: Menu Button */}
           <div className="justify-self-start">
             <Dialog>
@@ -89,15 +89,15 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="default"
-                  className="hover:bg-primary/5 hover:text-primary rounded-xl h-9 gap-2 px-4 text-foreground/70"
+                  className="hover:bg-primary/5 hover:text-primary rounded-xl h-9 gap-2 px-2 text-foreground/70"
                 >
                   <Menu className="h-5 w-5" />
                   منو
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[400px] p-0 gap-0 rounded-3xl">
-                <DialogHeader className="p-6 text-center relative border-b">
-                  <DialogTitle className="flex justify-center">
+              <DialogContent className="sm:max-w-[400px] p-0 gap-0 rounded-3xl" dir="rtl">
+                <DialogHeader className="p-6 text-right relative border-b">
+                  <DialogTitle className="flex justify-end">
                     <Image 
                       src="/img/Abanit_18-01.png" 
                       alt="آبانیت" 
@@ -115,7 +115,7 @@ export function Header() {
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="w-full px-4 py-3 text-right text-sm font-medium text-foreground/70 hover:text-primary rounded-xl hover:bg-primary/5 transition-all flex items-center justify-end gap-3 hover:gap-4 text-right"
+                          className="w-full px-4 py-3 text-right text-sm font-medium text-foreground/70 hover:text-primary rounded-xl hover:bg-primary/5 transition-all flex items-center justify-end gap-3 hover:gap-4"
                           onClick={() => (document.querySelector('[role="dialog"] button[aria-label="Close"]') as HTMLButtonElement)?.click()}
                         >
                           {item.title}
@@ -139,12 +139,12 @@ export function Header() {
           </div>
 
           {/* Center: Logo */}
-          <Link href="/" className="relative w-20 h-7 justify-self-center">
+          <Link href="/" className="relative w-16 h-6 justify-self-center">
             <Image 
               src="/img/Abanit_18-01.png" 
               alt="آبانیت" 
-              width={80}
-              height={28}
+              width={64}
+              height={24}
               className="w-full h-full object-contain"
             />
           </Link>
@@ -153,7 +153,7 @@ export function Header() {
           <div className="justify-self-end">
             <Button
               size="sm"
-              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-4 flex items-center gap-2"
+              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-2 flex items-center gap-2"
             >
               <Phone className="h-4 w-4" />
               تماس
