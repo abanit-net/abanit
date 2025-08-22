@@ -56,12 +56,26 @@
   body {
     @apply bg-background text-foreground font-[SF];
   }
+
+  /* Use Doran font for titles/headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Doran', 'SF', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  }
 }
 
 @font-face {
   font-family: 'SF';
   src: url('/font/sf.woff2') format('woff2');
   font-weight: 400 700;
+  font-display: swap;
+}
+
+/* Doran face for titles (woff provided in public/font/Doran.woff) */
+@font-face {
+  font-family: 'Doran';
+  src: url('/font/Doran.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -105,3 +119,88 @@
 .delay-700 {
   animation-delay: 700ms;
 }
+
+/* Local overrides for hero section to improve CTA contrast in light and dark modes */
+section[data-hero] {
+  /* slightly reduce saturation and brightness for primary in hero (light) */
+  --primary: 180 58% 46%;
+}
+
+.dark section[data-hero] {
+  /* darker/less saturated primary for dark mode hero to avoid glare */
+  --primary: 180 30% 48%;
+}
+
+/* Animated background for About section: subtle moving gradient/shape */
+.about-animated-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* nebula layers */
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(56,189,248,0.16), transparent 15%),
+    radial-gradient(circle at 80% 70%, rgba(99,102,241,0.14), transparent 14%),
+    radial-gradient(circle at 50% 15%, rgba(99,102,241,0.08), transparent 25%),
+    linear-gradient(180deg, rgba(6,182,212,0.02), rgba(99,102,241,0.02));
+  background-size: 160% 160%, 140% 140%, 120% 120%, 100% 100%;
+  mix-blend-mode: screen;
+  filter: saturate(1.05) contrast(1.02);
+  animation: about-bg-pan 24s linear infinite;
+}
+
+/* thin star layer using multiple small radial gradients for scattered stars */
+.about-animated-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 5% 10%, rgba(255,255,255,0.95) 1px, transparent 2px),
+    radial-gradient(circle at 15% 40%, rgba(255,255,255,0.9) 1px, transparent 2px),
+    radial-gradient(circle at 25% 70%, rgba(255,255,255,0.8) 1px, transparent 2px),
+    radial-gradient(circle at 40% 20%, rgba(255,255,255,0.85) 1px, transparent 2px),
+    radial-gradient(circle at 60% 60%, rgba(255,255,255,0.7) 1px, transparent 2px),
+    radial-gradient(circle at 75% 30%, rgba(255,255,255,0.9) 1px, transparent 2px),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.8) 1px, transparent 2px);
+  background-size: cover;
+  opacity: 0.9;
+  transform: translateZ(0);
+  animation: star-drift 60s linear infinite, star-twinkle 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.05));
+}
+
+/* Stronger / more visible galaxy in light mode */
+:not(.dark) .about-animated-bg {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(56,189,248,0.28), transparent 15%),
+    radial-gradient(circle at 80% 70%, rgba(99,102,241,0.22), transparent 14%),
+    radial-gradient(circle at 50% 15%, rgba(99,102,241,0.12), transparent 25%),
+    linear-gradient(180deg, rgba(6,182,212,0.03), rgba(99,102,241,0.03));
+  mix-blend-mode: normal;
+  opacity: 0.95;
+}
+
+:not(.dark) .about-animated-bg::after {
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.12));
+}
+
+@keyframes about-bg-pan {
+  0% { background-position: 0% 0%, 100% 100%, 0% 0%, 0% 0%; }
+  50% { background-position: 40% 60%, 60% 40%, 30% 70%, 0% 0%; }
+  100% { background-position: 0% 0%, 100% 100%, 0% 0%, 0% 0%; }
+}
+
+@keyframes star-drift {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-6px) translateX(8px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.6; }
+}
+

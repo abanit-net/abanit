@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ServerIcon, MonitorIcon, BrainCircuitIcon, PaletteIcon, LayoutGridIcon, HardDriveIcon } from 'lucide-react';
 import { motion } from "framer-motion";
+import About from "./About";
 import { useRef, useState } from "react";
 
 const services = [
@@ -139,8 +140,11 @@ function ServiceCard({ service }: { service: Service }) {
 
 export function Services() {
   return (
-    <section className="py-24 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto">
+    <>
+      {/* About is full-bleed and should live outside the constrained container */}
+      <About />
+      <section className="py-24 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">خدمات ما</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -158,5 +162,6 @@ export function Services() {
         </div>
       </div>
     </section>
+    </>
   );
 }

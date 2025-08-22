@@ -33,11 +33,15 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-4" dir="rtl">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 p-4"
+      dir="rtl"
+      style={{ ['--primary' as unknown as string]: '180 60% 50%' } as React.CSSProperties}
+    >
       <div
         className={`mx-auto max-w-6xl flex items-center justify-between h-14 rounded-2xl px-4 md:px-6 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-background/60 backdrop-blur-lg shadow-sm border border-primary/5" 
+          isScrolled
+            ? "bg-background/80 backdrop-blur-xl shadow-2xl dark:shadow-xl border border-primary/10 dark:bg-background/70 dark:border-primary/20"
             : "bg-transparent"
         }`}
       >
@@ -95,7 +99,7 @@ export function Header() {
                   منو
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[400px] p-0 gap-0 rounded-3xl" dir="rtl">
+                <DialogContent className="sm:max-w-[400px] p-0 gap-0 rounded-3xl text-right" dir="rtl">
                 <DialogHeader className="p-6 text-right relative border-b">
                   <DialogTitle className="flex justify-end">
                     <Image 
@@ -108,14 +112,14 @@ export function Header() {
                   </DialogTitle>
                 </DialogHeader>
                 <div className="p-6 flex flex-col items-stretch gap-6">
-                  <nav className="flex flex-col items-stretch gap-2 w-full">
+                    <nav className="flex flex-col items-stretch gap-2 w-full text-right">
                     {menuItems.map((item) => {
                       const Icon = item.icon;
                       return (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="w-full px-4 py-3 text-right text-sm font-medium text-foreground/70 hover:text-primary rounded-xl hover:bg-primary/5 transition-all flex items-center justify-end gap-3 hover:gap-4"
+                          className="w-full px-4 py-3 text-right text-sm font-medium text-foreground/70 hover:text-primary rounded-xl hover:bg-primary/5 transition-all flex items-center justify-end gap-3 hover:gap-4 flex-row-reverse"
                           onClick={() => (document.querySelector('[role="dialog"] button[aria-label="Close"]') as HTMLButtonElement)?.click()}
                         >
                           {item.title}

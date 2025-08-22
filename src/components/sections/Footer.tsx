@@ -47,7 +47,10 @@ const FooterSection = ({ title, children }: { title: string; children: React.Rea
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden">
+    <footer
+      className="relative overflow-hidden"
+      style={{ ['--primary' as unknown as string]: '180 55% 52%' } as React.CSSProperties}
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-primary/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
       <div className="absolute inset-0 flex items-center justify-center">
