@@ -60,7 +60,8 @@ export function FAQ() {
         </div>
         
         <motion.div 
-          className="grid md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-auto"
+          style={{ gridAutoFlow: 'row' }}
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -70,7 +71,7 @@ export function FAQ() {
             <motion.div 
               key={index}
               variants={item}
-              className="bg-card rounded-2xl overflow-hidden border"
+              className="bg-card rounded-2xl overflow-hidden border h-fit"
             >
               <Accordion type="single" collapsible>
                 <AccordionItem value={`item-${index}`} className="border-none">
