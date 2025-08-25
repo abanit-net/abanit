@@ -12,9 +12,9 @@ export function About() {
   <div className="absolute inset-0 bg-background/0 dark:bg-background/60 z-10" />
 
   <div className="relative max-w-6xl mx-auto text-center z-20">
-        <h2 className="text-4xl font-bold mb-4">آبانیت، ‌‌‌نبض خلاقیت ، رمز موفقیت</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-[2.2] sm:leading-normal">آبانیت، ‌‌‌نبض خلاقیت ، رمز موفقیت</h2>
 
-        <p className="text-lg text-muted-foreground max-w-5xl mx-auto mb-6">
+        <p className="text-base sm:text-lg text-muted-foreground max-w-5xl mx-auto mb-6 leading-[2.2] sm:leading-relaxed">
           آبانیت با تکیه بر تجربهٔ سال‌ها کار در حوزهٔ فناوری اطلاعات، راهکارهای دیجیتالِ مبتنی بر نیاز کسب‌وکارها ارائه می‌دهد. ما به ایجاد تجربه‌های قابل اتکا، امن و مقیاس‌پذیر برای مشتریان‌مان متعهدیم.
         </p>
 

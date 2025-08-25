@@ -1,0 +1,32 @@
+/* اضافه کردن بهینه‌سازی‌های اسکرول */
+* {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* بهینه‌سازی انیمیشن‌ها */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+}
+
+/* بهینه‌سازی برای گرادیان‌ها */
+.gradient-overlay {
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
+/* بهبود عملکرد فونت */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

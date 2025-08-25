@@ -77,6 +77,19 @@
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+/* اصلاح نمایش سرکش‌ها */
+.text-hero {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  line-height: 2;
+  text-wrap: balance;
 }
 
 @layer components {

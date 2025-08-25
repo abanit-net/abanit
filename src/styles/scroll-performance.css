@@ -1,0 +1,36 @@
+/* بهینه‌سازی اسکرول */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* کش کردن محتوا */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* بهینه‌سازی لایه‌ها */
+.hardware-accelerated {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* بهینه‌سازی انیمیشن‌ها */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* جلوگیری از reflow */
+.size-contained {
+  contain: size layout;
+}

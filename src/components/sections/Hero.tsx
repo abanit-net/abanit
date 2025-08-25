@@ -2,20 +2,24 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-  <section data-hero className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+  <section 
+      data-hero 
+      className="relative min-h-[90vh] flex items-center justify-center hardware-accelerated content-visibility-auto size-contained"
+      style={{ contain: 'paint layout' }}
+    >
       {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/20" />
-        <div className="absolute right-1/4 top-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute left-1/4 bottom-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700" />
-      </div>
+      <div className="absolute inset-0 -z-10 transform-gpu">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/20 will-change-transform" />
+        <div className="fixed right-1/4 top-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse transform-gpu" />
+        <div className="fixed left-1/4 bottom-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700 transform-gpu" />
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 -z-10">
-        <div className="h-full w-full 
-          [background-image:linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px)] 
-          [background-size:40px_40px]"
-        />
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 -z-10">
+          <div className="h-full w-full 
+            [background-image:linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px)] 
+            [background-size:40px_40px]"
+          />
+        </div>
       </div>
 
       <div className="container px-4 md:px-6">
@@ -23,28 +27,28 @@ export function Hero() {
           {/* Main Title with Animation */}
           <br /><br /><br />
           <div 
-            className="relative backdrop-blur-sm rounded-2xl p-8 border border-primary/10 bg-background/30"
+            className="relative backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/10 bg-background/30"
             style={{
               animation: "bounce 3s ease-in-out infinite alternate",
               animationDelay: "calc(200ms * var(--index, 0))"
             }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground/80 to-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground/80 to-foreground text-hero leading-[2.2] sm:leading-[2]">
               آبانیت؛ همراه شما در
             </h1>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/60 mt-2">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/60 mt-1 sm:mt-2 text-hero leading-[2.2] sm:leading-[2]">
               تحول دیجیتال کسب‌وکار
             </h1>
-            <div className="absolute -inset-x-2 -inset-y-4 bg-primary/5 blur-2xl rounded-[30px] -z-10" />
+            <div className="absolute -inset-x-4 -inset-y-8 bg-primary/5 blur-2xl rounded-[30px] -z-10 transform-gpu" />
           </div>
 
           {/* Description */}
-          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 backdrop-blur-sm bg-background/30 p-6 rounded-2xl border border-primary/10">
+          <p className="max-w-[42rem] leading-[2.2] sm:leading-8 text-muted-foreground text-base sm:text-xl backdrop-blur-sm bg-background/30 p-4 sm:p-6 rounded-2xl border border-primary/10 mx-4 sm:mx-0">
             با بیش از یک دهه تجربه در ارائه راهکارهای نرم‌افزاری، به شما کمک می‌کنیم تا کسب‌وکارتان را به سطح بعدی ببرید
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             <Button 
               size="lg"
               className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl dark:bg-[color:var(--primary)] dark:text-primary-foreground"

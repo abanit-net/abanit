@@ -89,7 +89,7 @@ export function Clients() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">
+          <h2 className="text-4xl font-bold bg-clip-text from-primary to-primary/50">
             مشتریان ما
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">

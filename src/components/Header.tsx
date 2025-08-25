@@ -17,7 +17,7 @@ const menuItems = [
   { title: "خانه", href: "/", icon: Home },
   { title: "خدمات", href: "#services", icon: Blocks },
   { title: "درباره ما", href: "#about", icon: Info },
-  { title: "نمونه کارها", href: "#portfolio", icon: ImageIcon },
+  { title: "مشتریان", href: "#portfolio", icon: ImageIcon },
   { title: "تماس", href: "#contact", icon: MessageCircle },
 ];
 
