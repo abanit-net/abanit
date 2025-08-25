@@ -1,6 +1,19 @@
+"use client"
 import { Button } from "@/components/ui/button";
+import { TypingAnimation } from "@/components/ui/typing-animation";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [showDescription, setShowDescription] = useState(false);
+
+  useEffect(() => {
+    // Start fade animation after typing animation (approximately)
+    const timer = setTimeout(() => {
+      setShowDescription(true);
+    }, 2000); // Adjust this value based on your typing animation duration
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
   <section 
       data-hero 
@@ -28,24 +41,29 @@ export function Hero() {
           <br /><br /><br />
           <div 
             className="relative backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/10 bg-background/30"
-            style={{
-              animation: "bounce 3s ease-in-out infinite alternate",
-              animationDelay: "calc(200ms * var(--index, 0))"
-            }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground/80 to-foreground text-hero leading-[2.2] sm:leading-[2]">
-              آبانیت؛ همراه شما در
+              <TypingAnimation 
+                text="آبانیت؛ همراه شما در" 
+                speed={70} 
+              />
             </h1>
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/60 mt-1 sm:mt-2 text-hero leading-[2.2] sm:leading-[2]">
-              تحول دیجیتال کسب‌وکار
+              <TypingAnimation 
+                text="تحول دیجیتال کسب‌وکار" 
+                speed={70} 
+                delay={1000}
+              />
             </h1>
             <div className="absolute -inset-x-4 -inset-y-8 bg-primary/5 blur-2xl rounded-[30px] -z-10 transform-gpu" />
           </div>
 
           {/* Description */}
-          <p className="max-w-[42rem] leading-[2.2] sm:leading-8 text-muted-foreground text-base sm:text-xl backdrop-blur-sm bg-background/30 p-4 sm:p-6 rounded-2xl border border-primary/10 mx-4 sm:mx-0">
-            با بیش از یک دهه تجربه در ارائه راهکارهای نرم‌افزاری، به شما کمک می‌کنیم تا کسب‌وکارتان را به سطح بعدی ببرید
-          </p>
+          <div className={`transition-all duration-1000 transform ${showDescription ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <p className="max-w-[42rem] leading-[2.2] sm:leading-8 text-muted-foreground text-base sm:text-xl backdrop-blur-sm bg-background/30 p-4 sm:p-6 rounded-2xl border border-primary/10 mx-4 sm:mx-0">
+              با بیش از یک دهه تجربه در ارائه راهکارهای نرم‌افزاری، به شما کمک می‌کنیم تا کسب‌وکارتان را به سطح بعدی ببرید
+            </p>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
@@ -67,7 +85,7 @@ export function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 mt-8 w-full">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-8 w-full px-2 sm:px-0">
             {[
               { number: "۱۰+", label: "سال تجربه" },
               { number: "۵۰+", label: "پروژه موفق" },
@@ -78,18 +96,18 @@ export function Hero() {
                 style={{
                   animationDelay: `${index * 200}ms`
                 }}
-                className="relative group bg-card/30 hover:bg-card/50 backdrop-blur-sm border border-primary/10 rounded-2xl p-6 duration-300 hover:scale-105 transition-all animate-fade-up"
+                className="relative group bg-card/30 hover:bg-card/50 backdrop-blur-sm border border-primary/10 rounded-xl sm:rounded-2xl p-3 sm:p-6 duration-300 hover:scale-105 transition-all animate-fade-up"
               >
-                <div className="font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/60">
+                <div className="font-bold text-xl sm:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/60">
                   {stat.number}
                 </div>
-                <div className="text-muted-foreground mt-2">
+                <div className="text-muted-foreground mt-1 sm:mt-2 text-sm sm:text-base">
                   {stat.label}
                 </div>
-                <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity" />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 rounded-xl sm:rounded-2xl transition-opacity" />
               </div>
             ))}
-          </div>
+          </div><br />
         </div>
       </div>
     </section>

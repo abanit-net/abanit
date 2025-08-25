@@ -56,6 +56,16 @@
   body {
     @apply bg-background text-foreground font-[SF];
   }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
   /* Use Doran font for titles/headings */
   h1, h2, h3, h4, h5, h6 {

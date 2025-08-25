@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { InteractiveTimeline } from "@/components/ui/interactive-timeline";
 
 export function About() {
   return (
@@ -18,31 +19,32 @@ export function About() {
           آبانیت با تکیه بر تجربهٔ سال‌ها کار در حوزهٔ فناوری اطلاعات، راهکارهای دیجیتالِ مبتنی بر نیاز کسب‌وکارها ارائه می‌دهد. ما به ایجاد تجربه‌های قابل اتکا، امن و مقیاس‌پذیر برای مشتریان‌مان متعهدیم.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-right mb-8">
-          <div className="p-6 rounded-2xl bg-card/50 border border-primary/10">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">01</div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">ماموریت ما</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  کمک به رشد کسب‌وکارها از طریق راهکارهای دیجیتال کاربردی؛ ارائه مشاوره، طراحی و پیاده‌سازی با تمرکز بر نتیجه‌محوری و پایداری.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 rounded-2xl bg-card/50 border border-primary/10">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">02</div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">روش کار</h3>
-                <ol className="text-muted-foreground leading-relaxed list-inside list-decimal">
-                  <li>تحلیل نیاز و تعریف اهداف کسب‌وکار</li>
-                  <li>طراحی راهکار و تعیین نقشه مسیر</li>
-                  <li>پیاده‌سازی با متدولوژی‌های چابک و تضمین کیفیت</li>
-                  <li>پشتیبانی و بهینه‌سازی مستمر</li>
-                </ol>
-              </div>
-            </div>
+        <div className="mb-12 max-w-5xl mx-auto">
+          <div className="bg-card/30 backdrop-blur-sm border border-primary/10 rounded-2xl p-8">
+            <InteractiveTimeline
+              items={[
+                {
+                  number: "۱",
+                  title: "تحلیل نیاز",
+                  description: "بررسی دقیق نیازها و اهداف کسب‌وکار شما، شناسایی چالش‌ها و فرصت‌های بهبود"
+                },
+                {
+                  number: "۲",
+                  title: "طراحی راهکار",
+                  description: "تدوین استراتژی و نقشه راه متناسب با نیازهای شما، با تمرکز بر نوآوری و کارایی"
+                },
+                {
+                  number: "۳",
+                  title: "پیاده‌سازی",
+                  description: "اجرای پروژه با متدولوژی‌های چابک، تضمین کیفیت و بازخورد مستمر"
+                },
+                {
+                  number: "۴",
+                  title: "پشتیبانی",
+                  description: "ارائه خدمات پشتیبانی و بهینه‌سازی مداوم برای اطمینان از موفقیت پایدار"
+                }
+              ]}
+            />
           </div>
         </div>
 
