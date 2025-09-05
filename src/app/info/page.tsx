@@ -18,6 +18,7 @@ export default function ContactPage() {
             className="max-w-4xl mx-auto"
           >
             <div className="text-center mb-12">
+              <br /><br />
               <h1 className="text-4xl font-bold mb-4">تماس با ما</h1>
               <p className="text-xl text-muted-foreground">
                 ما آماده پاسخگویی به سوالات و پیشنهادات شما هستیم
