@@ -15,10 +15,10 @@ import {
 
 const menuItems = [
   { title: "خانه", href: "/", icon: Home },
-  { title: "خدمات", href: "#services", icon: Blocks },
+  { title: "خدمات", href: "services", icon: Blocks },
   { title: "درباره ما", href: "#about", icon: Info },
   { title: "مشتریان", href: "#portfolio", icon: ImageIcon },
-  { title: "تماس", href: "#contact", icon: MessageCircle },
+  { title: "تماس", href: "info", icon: MessageCircle },
 ];
 
 export function Header() {
