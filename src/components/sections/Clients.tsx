@@ -89,7 +89,7 @@ export function Clients() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold bg-clip-text from-primary to-primary/50">
+          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-cyan-600 to-cyan-700">
             مشتریان ما
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -119,13 +119,13 @@ export function Clients() {
                         <p className="text-sm text-muted-foreground">{client.role}</p>
                       </div>
                       <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary to-primary/50" />
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-700" />
                       </div>
                     </div>
 
                     <div className="mt-6 grid grid-cols-3 gap-4 p-4 bg-muted/30 rounded-xl">
                       <div className="text-center">
-                        <div className="text-primary font-bold">{client.stats.growth}</div>
+                        <div className="text-cyan-600 font-bold">{client.stats.growth}</div>
                         <div className="text-xs text-muted-foreground mt-1">رشد</div>
                       </div>
                       <div className="text-center">

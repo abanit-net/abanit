@@ -1,8 +1,7 @@
 "use client";
 
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+
 import { motion } from "framer-motion";
 
 const SocialIcon = ({ children, label }: { children: React.ReactNode; label: string }) => (
@@ -49,7 +48,7 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ ['--primary' as unknown as string]: '180 55% 52%' } as React.CSSProperties}
+      style={{ ['--primary' as unknown as string]: '180 66% 36%' } as React.CSSProperties}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-primary/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
@@ -58,47 +57,6 @@ export function Footer() {
       </div>
 
       <div className="relative">
-        {/* Newsletter Section */}
-        <div className="bg-background/30 backdrop-blur-xl border-y border-primary/5">
-          <div className="max-w-7xl mx-auto px-6 py-16">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-center md:text-right space-y-2 flex-1">
-                <motion.h2 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="text-2xl font-bold"
-                >
-                  عضویت در خبرنامه
-                </motion.h2>
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-muted-foreground"
-                >
-                  برای دریافت آخرین اخبار و تخفیف‌ها عضو شوید
-                </motion.p>
-              </div>
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex flex-col sm:flex-row gap-4 w-full md:w-auto"
-              >
-                <Input
-                  type="email"
-                  placeholder="ایمیل خود را وارد کنید"
-                  className="rounded-xl bg-background/50 border-primary/10 md:w-80"
-                />
-                <Button className="rounded-xl bg-primary/10 hover:bg-primary/20 text-primary">
-                  عضویت
-                </Button>
-              </motion.div>
-            </div>
-          </div>
-        </div>
 
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-6 py-16">

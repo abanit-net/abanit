@@ -12,7 +12,7 @@ const services = [
     description: "زیرساخت‌های IT و راهکارهای شبکه‌ای",
     icon: ServerIcon,
     href: "/services/network",
-    color: "from-cyan-400 to-blue-500"
+    color: "from-cyan-600 to-cyan-700"
   },
   {
     title: "طراحى سایت‌های حرفه‌ای و سئو",
@@ -110,7 +110,7 @@ function ServiceCard({ service }: { service: Service }) {
           <div
             className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             style={{
-              background: `radial-gradient(circle at ${glowPosition.x}px ${glowPosition.y}px, rgba(0, 200, 255, 0.15) 0%, transparent 50%)`,
+              background: `radial-gradient(circle at ${glowPosition.x}px ${glowPosition.y}px, rgb(8 145 178 / 0.15) 0%, transparent 50%)`,
               width: '100%',
               height: '100%',
               top: 0,
@@ -125,7 +125,7 @@ function ServiceCard({ service }: { service: Service }) {
             <h3 className="text-xl font-bold mb-2">{service.title}</h3>
             <p className="text-muted-foreground">{service.description}</p>
             
-            <div className="mt-4 flex items-center text-primary font-semibold group-hover:text-primary/80 transition-colors">
+            <div className="mt-4 flex items-center text-cyan-600 font-semibold group-hover:text-cyan-700 transition-colors">
               <span>اطلاعات بیشتر</span>
               <svg className="w-5 h-5 mr-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

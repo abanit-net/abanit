@@ -15,19 +15,22 @@ import {
 
 const menuItems = [
   { title: "خانه", href: "/", icon: Home },
-  { title: "خدمات", href: "services", icon: Blocks },
+  { title: "خدمات", href: "/services", icon: Blocks },
   { title: "درباره ما", href: "#about", icon: Info },
   { title: "مشتریان", href: "#portfolio", icon: ImageIcon },
-  { title: "تماس", href: "info", icon: MessageCircle },
+  { title: "تماس", href: "/info", icon: MessageCircle },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
+    handleScroll(); // Check initial scroll position
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -40,6 +43,7 @@ export function Header() {
     >
       <div
         className={`mx-auto max-w-6xl flex items-center justify-between h-14 rounded-2xl px-4 md:px-6 transition-all duration-300 ${
+          !isMounted ? "bg-transparent" : 
           isScrolled
             ? "bg-background/80 backdrop-blur-xl shadow-2xl dark:shadow-xl border border-primary/10 dark:bg-background/70 dark:border-primary/20"
             : "bg-transparent"

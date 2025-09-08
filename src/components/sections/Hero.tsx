@@ -1,6 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button";
-import { TypingAnimation } from "@/components/ui/typing-animation";
+import { TypingAnimation } from "@/components/ui/typing-animation"
 import { useEffect, useState } from "react";
 
 export function Hero() {
@@ -69,7 +69,7 @@ export function Hero() {
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             <Button 
               size="lg"
-              className="relative group bg-primary text-primary-foreground hover:bg-primary/90 rounded-2xl dark:bg-[color:var(--primary)] dark:text-primary-foreground"
+              className="relative group bg-cyan-600/90 hover:bg-cyan-700/90 text-white dark:bg-cyan-700/80 dark:hover:bg-cyan-600/80 rounded-2xl"
             >
               <span className="relative z-10">شروع همکاری</span>
               <div className="absolute inset-0 rounded-2xl bg-primary-foreground/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-right" />
@@ -98,7 +98,7 @@ export function Hero() {
                 }}
                 className="relative group bg-card/30 hover:bg-card/50 backdrop-blur-sm border border-primary/10 rounded-xl sm:rounded-2xl p-3 sm:p-6 duration-300 hover:scale-105 transition-all animate-fade-up"
               >
-                <div className="font-bold text-xl sm:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-primary to-primary/60">
+                <div className="font-bold text-xl sm:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-cyan-600 to-cyan-700">
                   {stat.number}
                 </div>
                 <div className="text-muted-foreground mt-1 sm:mt-2 text-sm sm:text-base">

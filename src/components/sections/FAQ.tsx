@@ -76,7 +76,7 @@ export function FAQ() {
               <Accordion type="single" collapsible>
                 <AccordionItem value={`item-${index}`} className="border-none">
                   <AccordionTrigger className="px-6 py-4 text-right hover:no-underline hover:bg-muted/50 transition-colors group">
-                    <span className="text-base font-medium group-hover:text-primary transition-colors">
+                    <span className="text-base font-medium group-hover:text-cyan-600 transition-colors">
                       {faq.question}
                     </span>
                   </AccordionTrigger>

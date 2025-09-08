@@ -20,7 +20,7 @@ export default function NetworkServices() {
                 <span className="text-sm text-muted-foreground/90 font-medium">شبکه و زیرساخت — طراحی، امنیت، پشتیبانی</span>
               </div>
 
-              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">زیرساخت شبکه قابل اعتماد و امن</h1>
+              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">زیرساخت شبکه قابل اعتماد</h1>
               <p className="text-lg text-muted-foreground mb-6 max-w-2xl">پیاده‌سازی شبکه‌های امن، مقیاس‌پذیر و مدیریت‌شده که عملکرد کسب‌وکار شما را تضمین می‌کنند.</p>
 
               <div className="flex gap-3 flex-col sm:flex-row">

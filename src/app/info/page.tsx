@@ -2,104 +2,83 @@
 
 import { motion } from "framer-motion"
 import { Phone, Mail, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { PageFooter } from "@/components/ui/page-footer"
+import { colors } from "@/lib/theme"
+import Image from "next/image"
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex-1 py-20">
+    <div className="min-h-screen flex flex-col pt-28 md:pt-32">
+      <div className="flex-1">
         <div className="container px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="text-center mb-12">
-              <br /><br />
-              <h1 className="text-4xl font-bold mb-4">تماس با ما</h1>
-              <p className="text-xl text-muted-foreground">
-                ما آماده پاسخگویی به سوالات و پیشنهادات شما هستیم
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="bg-card/30 backdrop-blur-sm border border-primary/10 rounded-2xl p-6 text-center"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">تلفن تماس</h3>
-                <p className="text-muted-foreground">۰۲۱-۸۸۸۸۸۸۸۸</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="bg-card/30 backdrop-blur-sm border border-primary/10 rounded-2xl p-6 text-center"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-6 h-6 text-primary" />
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                  در تماس باشید
+                </h1>
+                <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                  تیم متخصص ما آماده پاسخگویی و ارائه راهکارهای فنی متناسب با نیاز شماست
+                </p>
+                <div className="space-y-6">
+                  <div className={`flex items-center gap-4 p-4 rounded-2xl ${colors.piin.light} ${colors.piin.dark} bg-opacity-10`}>
+                    <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">تلفن تماس</h3>
+                      <p className="text-white/80">۰۲۱-۸۸۸۸۸۸۸۸</p>
+                    </div>
+                  </div>
+                  
+                  <div className={`flex items-center gap-4 p-4 rounded-2xl ${colors.piin.light} ${colors.piin.dark} bg-opacity-10`}>
+                    <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">ایمیل</h3>
+                      <p className="text-white/80">info@abanit.net</p>
+                    </div>
+                  </div>
+                  
+                  <div className={`flex items-center gap-4 p-4 rounded-2xl ${colors.piin.light} ${colors.piin.dark} bg-opacity-10`}>
+                    <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0">
+                      <MapPin className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">آدرس</h3>
+                      <p className="text-white/80">تهران، خیابان ولیعصر</p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-semibold mb-2">ایمیل</h3>
-                <p className="text-muted-foreground">info@abanit.net</p>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="bg-card/30 backdrop-blur-sm border border-primary/10 rounded-2xl p-6 text-center"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4 }}
+                className="relative"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">آدرس</h3>
-                <p className="text-muted-foreground">تهران، خیابان ولیعصر</p>
-              </motion.div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="bg-card/30 backdrop-blur-sm border border-primary/10 rounded-2xl p-8"
-            >
-              <h2 className="text-2xl font-bold mb-6">ارسال پیام</h2>
-              <form className="grid gap-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">نام و نام خانوادگی</label>
-                    <Input className="bg-background" placeholder="نام خود را وارد کنید" />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">شماره تماس</label>
-                    <Input className="bg-background" placeholder="شماره تماس خود را وارد کنید" />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block">ایمیل</label>
-                  <Input className="bg-background" type="email" placeholder="ایمیل خود را وارد کنید" />
-                </div>
-                <div>
-                  <label className="text-sm font-medium mb-2 block">پیام</label>
-                  <textarea 
-                    className="w-full min-h-[150px] rounded-xl border bg-background px-3 py-2 text-sm"
-                    placeholder="پیام خود را وارد کنید"
+                <div className={`absolute inset-0 rounded-3xl ${colors.piin.light} ${colors.piin.dark} opacity-20 blur-3xl -z-10`}></div>
+                <div className="relative aspect-square rounded-3xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-500">
+                  <Image
+                    src="/img/info.png"
+                    alt="تصویر دفتر آبان آیتی"
+                    fill
+                    className="object-cover"
                   />
                 </div>
-                <Button className="w-full md:w-auto">
-                  ارسال پیام
-                </Button>
-              </form>
-            </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

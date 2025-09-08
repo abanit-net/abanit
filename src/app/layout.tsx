@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/Header";
+import { Template } from "@/components/template";
 import "./globals.css";
 import "../styles/scroll-optimize.css";
 import "../styles/scroll-performance.css";
@@ -38,7 +39,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Header />
-          {children}
+          <Template>{children}</Template>
         </ThemeProvider>
         <SpeedInsights/>
       </body>
