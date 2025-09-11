@@ -30,31 +30,67 @@ const FooterLink = ({ href, children }: { href: string; children: React.ReactNod
   </motion.a>
 );
 
-const FooterSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="space-y-4"
-  >
-    <h3 className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
-      {title}
-    </h3>
-    {children}
-  </motion.div>
-);
+
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
+const FooterSection = ({ title, children, className = "" }: { title: string; children: React.ReactNode; className?: string }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className={className}
+    >
+      <div className="hidden md:block">
+        <h3 className="font-bold text-lg text-cyan-600 mb-4">
+          {title}
+        </h3>
+        <div className="space-y-4">
+          {children}
+        </div>
+      </div>
+      
+      <div className="md:hidden">
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1" className="border-none">
+            <AccordionTrigger className="px-4 py-4 text-right hover:no-underline hover:bg-muted/50 transition-colors rounded-xl group">
+              <span className="text-base font-medium group-hover:text-cyan-600 transition-colors">
+                {title}
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="px-4 pb-4">
+              <div className="space-y-4">
+                {children}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </motion.div>
+  )
+}
 
 export function Footer() {
   return (
     <footer
-      className="relative overflow-hidden"
+      className="relative overflow-hidden bg-background"
       style={{ ['--primary' as unknown as string]: '180 66% 36%' } as React.CSSProperties}
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-primary/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[800px] h-[800px] rounded-full bg-primary/5 blur-[128px] opacity-50" />
+      {/* Grid Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#00a6ed10,transparent)]" />
       </div>
+      
+      {/* Glowing Orbs */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-cyan-600/10 blur-[100px] opacity-50" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[100px] opacity-50" />
+      </div>
+      
+      {/* Glass Effect */}
+      <div className="absolute inset-0 backdrop-blur-[2px]" />
 
       <div className="relative">
 
@@ -116,8 +152,8 @@ export function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M22 16.92V19.92C22 20.4704 21.7893 20.9987 21.4142 21.3738C21.0391 21.7489 20.5109 21.9596 19.96 21.96C18.3248 21.9599 16.7087 21.6261 15.212 20.98C13.8328 20.3879 12.5871 19.5461 11.547 18.503C10.5039 17.4629 9.66214 16.2172 9.07 14.838C8.42114 13.3391 8.08721 11.7203 8.09 10.083C8.09046 9.53285 8.30116 9.00526 8.67572 8.6307C9.05028 8.25614 9.57752 8.0454 10.127 8.045H13.127C14.1415 8.03477 14.9799 8.79644 15.072 9.804C15.1559 10.7094 15.364 11.5981 15.691 12.448C15.9108 13.0781 15.7916 13.7800 15.367 14.307L14.257 15.417C14.7974 16.5009 15.5181 17.4865 16.3872 18.3556C17.2563 19.2247 18.2419 19.9454 19.325 20.486L20.435 19.376C20.9618 18.9514 21.6633 18.8322 22.293 19.052C23.1429 19.379 24.0316 19.5871 24.937 19.671C25.9657 19.7657 26.7223 20.6287 26.692 21.653L22 16.92Z" className="stroke-primary" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 16.92V21a1 1 0 0 1-1.11.993C10.21 21.7 2.3 13.79 2.007 3.11A1 1 0 0 1 3 2h4.09a1 1 0 0 1 .97.757l.7 2.8a1 1 0 0 1-.24.9L7.6 8.6a16 16 0 0 0 8.8 8.8l1.2-1.19a1 1 0 0 1 .9-.24l2.8.7a1 1 0 0 1 .76.97V16.92z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                   <span className="text-muted-foreground">۰۲۱-۴۴۴۴۴۴۴۴</span>
@@ -145,8 +181,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary/5 bg-background/30 backdrop-blur-xl">
-          <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="relative border-t border-white/5">
+          <div className="absolute inset-0 bg-cyan-950/20 backdrop-blur-xl" />
+          <div className="relative max-w-7xl mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -162,8 +199,8 @@ export function Footer() {
                 viewport={{ once: true }}
                 className="flex items-center gap-4"
               >
-                <a href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">حریم خصوصی</a>
-                <a href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">شرایط استفاده</a>
+                <a href="/privacy" className="text-sm text-muted-foreground hover:text-cyan-500 transition-colors">حریم خصوصی</a>
+                <a href="/terms" className="text-sm text-muted-foreground hover:text-cyan-500 transition-colors">شرایط استفاده</a>
               </motion.div>
             </div>
           </div>

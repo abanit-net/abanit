@@ -16,8 +16,8 @@ import {
 const menuItems = [
   { title: "خانه", href: "/", icon: Home },
   { title: "خدمات", href: "/services", icon: Blocks },
-  { title: "درباره ما", href: "#about", icon: Info },
-  { title: "مشتریان", href: "#portfolio", icon: ImageIcon },
+  { title: "درباره ما", href: "/about", icon: Info },
+  { title: "مشتریان", href: "/client", icon: ImageIcon },
   { title: "تماس", href: "/info", icon: MessageCircle },
 ];
 

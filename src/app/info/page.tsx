@@ -72,7 +72,7 @@ export default function ContactPage() {
                 <div className="relative aspect-square rounded-3xl overflow-hidden transform hover:scale-[1.01] transition-transform duration-500">
                   <Image
                     src="/img/info.png"
-                    alt="تصویر دفتر آبان آیتی"
+                    alt="تصویر آبانیت هوش مصنوعی"
                     fill
                     className="object-cover"
                   />

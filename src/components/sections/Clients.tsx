@@ -1,62 +1,36 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
 
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import "@/styles/circuit.css"
 
 const clients = [
   {
-    name: "شرکت الف",
-    role: "صنعت نرم‌افزار",
-    person: "علی محمدی",
-    position: "مدیرعامل",
-    testimonial: "همکاری با تیم آبانیت باعث رشد چشمگیر کسب و کار ما شد. استفاده از راهکارهای هوشمند و خلاقانه آن‌ها، مسیر موفقیت ما را هموار کرد.",
-    image: "/img/client1.png",
-    stats: {
-      growth: "+۱۵۰٪",
-      time: "۶ ماه",
-      satisfaction: "۹۸٪"
-    }
+    id: "arkajam",
+    name: "آرکاجم",
+    logo: "/img/Abanit_18-01.png",
+    desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
+    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
   },
   {
-    name: "شرکت ب",
-    role: "فین‌تک",
-    person: "مریم احمدی",
-    position: "مدیر فنی",
-    testimonial: "کیفیت خدمات و پشتیبانی عالی آبانیت برای ما ارزشمند است. تیم متخصص و متعهد آن‌ها همیشه آماده کمک و ارائه راهکارهای مناسب هستند.",
-    image: "/img/client2.png",
-    stats: {
-      growth: "+۲۰۰٪",
-      time: "۳ ماه",
-      satisfaction: "۱۰۰٪"
-    }
+    id: "sibshargh",
+    name: "سیب شرق",
+    desc: "پروژه‌های طراحی وب و کمپین‌های برندینگ.",
+    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
   },
   {
-    name: "شرکت ج",
-    role: "خرده‌فروشی آنلاین",
-    person: "رضا کریمی",
-    position: "مدیر بازاریابی",
-    testimonial: "راهکارهای هوشمند آبانیت به ما در توسعه بازار کمک کرد. استراتژی‌های دیجیتال مارکتینگ و SEO آن‌ها نتایج فوق‌العاده‌ای برای ما به همراه داشت.",
-    image: "/img/client3.png",
-    stats: {
-      growth: "+۸۰٪",
-      time: "۴ ماه",
-      satisfaction: "۹۵٪"
-    }
+    id: "digiactive",
+    name: "دیجی اکتیو",
+    desc: "راه‌اندازی فروشگاه آنلاین و بهینه‌سازی تبدیل.",
+    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
   },
   {
-    name: "شرکت د",
-    role: "هوش مصنوعی",
-    person: "سارا محمودی",
-    position: "مدیر محصول",
-    testimonial: "همکاری با آبانیت تجربه‌ای فوق‌العاده بود. تیم آن‌ها با درک عمیق از نیازهای ما و ارائه راهکارهای نوآورانه، به ما در دستیابی به اهدافمان کمک کردند.",
-    image: "/img/client4.png",
-    stats: {
-      growth: "+۱۲۰٪",
-      time: "۸ ماه",
-      satisfaction: "۹۷٪"
-    }
+    id: "stocker",
+    name: "استوکر",
+    desc: "طراحی تجربه کاربری و هویت بصری محصولات.",
+    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
   }
 ];
 
@@ -78,18 +52,18 @@ const item = {
 
 export function Clients() {
   return (
-    <section className="relative py-32 circuit-background overflow-hidden">
-      {/* Glass Overlay */}
-      <div className="absolute inset-0 bg-background/30 backdrop-blur-sm" />
+    <section className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none circuit"></div>
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
+      <div className="relative container">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-cyan-600 to-cyan-700">
+          <h2 className="text-4xl font-bold text-cyan-600">
             مشتریان ما
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -106,55 +80,57 @@ export function Clients() {
         >
           {clients.map((client) => (
             <motion.div
-              key={client.name}
+              key={client.id}
               variants={item}
-              className="group"
+              className="group relative rounded-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-card/50 to-card border border-border/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/50"
             >
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <div className="client-card rounded-2xl p-6 cursor-pointer">
-                    <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <h3 className="font-semibold text-lg">{client.name}</h3>
-                        <p className="text-sm text-muted-foreground">{client.role}</p>
-                      </div>
-                      <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-700" />
-                      </div>
-                    </div>
-
-                    <div className="mt-6 grid grid-cols-3 gap-4 p-4 bg-muted/30 rounded-xl">
-                      <div className="text-center">
-                        <div className="text-cyan-600 font-bold">{client.stats.growth}</div>
-                        <div className="text-xs text-muted-foreground mt-1">رشد</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-primary font-bold">{client.stats.time}</div>
-                        <div className="text-xs text-muted-foreground mt-1">زمان</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-primary font-bold">{client.stats.satisfaction}</div>
-                        <div className="text-xs text-muted-foreground mt-1">رضایت</div>
-                      </div>
-                    </div>
-
-                    <div className="mt-6 flex items-center justify-between text-sm">
-                      <div className="font-medium">{client.person}</div>
-                      <div className="text-muted-foreground">{client.position}</div>
-                    </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              
+              <div className="relative p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h3 className="text-lg font-semibold">{client.name}</h3>
                   </div>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80 p-0">
-                  <div className="p-6">
-                    <blockquote className="text-sm text-muted-foreground leading-relaxed">
-                      &ldquo;{client.testimonial}&rdquo;
-                    </blockquote>
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
+                  {client.logo && (
+                    <div className="w-12 h-12 rounded-xl overflow-hidden border border-border/50">
+                      <Image 
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        width={48}
+                        height={48}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-6">
+                  {client.desc}
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {client.services.map((service, index) => (
+                    <span 
+                      key={index}
+                      className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium text-foreground/70 ring-1 ring-inset ring-border/5"
+                    >
+                      {service}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
+        
+        <div className="mt-12 text-center">
+          <Link 
+            href="/client" 
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-sm bg-gradient-to-r from-cyan-600 to-cyan-500 text-white shadow transition-colors hover:from-cyan-500 hover:to-cyan-400"
+          >
+            مشاهده همه مشتریان
+          </Link>
+        </div>
       </div>
     </section>
   );
