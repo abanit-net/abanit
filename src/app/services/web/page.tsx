@@ -37,10 +37,7 @@ export default function WebServices() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button className="rounded-xl" asChild={false}>
-                  <a href="#contact" className="block">درخواست مشاوره</a>
-                </Button>
-                <Button className="rounded-xl bg-background/10 border" asChild={false}>
-                  <a href="#cases" className="block">مشاهده نمونه‌کارها</a>
+                  <a href="#cases" className="block">مشاهده نمونه کارها</a>
                 </Button>
               </div>
             </div>
@@ -213,43 +210,6 @@ export default function WebServices() {
             </div>
           </motion.section>
 
-          {/* CONTACT FORM */}
-          <motion.section id="contact" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">درخواست مشاوره رایگان</h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <form className="space-y-4 bg-card/30 p-6 rounded-xl border">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="نام و نام خانوادگی" />
-                  <Input placeholder="ایمیل" type="email" />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="تلفن" />
-                  <Input placeholder="آدرس سایت (در صورت وجود)" />
-                </div>
-                <div>
-                  <textarea className="w-full min-h-[112px] rounded-xl border bg-background px-3 py-2 text-sm" placeholder="توضیح کوتاه درباره نیازها" />
-                </div>
-                <div>
-                  <Button className="w-full rounded-xl">ارسال درخواست</Button>
-                </div>
-              </form>
-
-              <div className="space-y-4">
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">تماس سریع</h3>
-                  <p className="text-muted-foreground">۰۲۱-۴۴۴۴۴۴۴۴</p>
-                </div>
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">آدرس</h3>
-                  <p className="text-muted-foreground">تهران، خیابان ولیعصر</p>
-                </div>
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">پشتیبانی</h3>
-                  <p className="text-muted-foreground">info@abanit.net</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
 
           {/* FAQ */}
           <motion.section className="py-8 lg:py-16">

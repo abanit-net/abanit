@@ -148,7 +148,7 @@ export function Footer() {
                       <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" className="stroke-primary" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="text-muted-foreground">تهران، خیابان ولیعصر</span>
+                  <span className="text-muted-foreground">مشهد، فرامرز عباسی ۴۴، پلاک ۵۳</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center">
@@ -156,7 +156,7 @@ export function Footer() {
                       <path d="M22 16.92V21a1 1 0 0 1-1.11.993C10.21 21.7 2.3 13.79 2.007 3.11A1 1 0 0 1 3 2h4.09a1 1 0 0 1 .97.757l.7 2.8a1 1 0 0 1-.24.9L7.6 8.6a16 16 0 0 0 8.8 8.8l1.2-1.19a1 1 0 0 1 .9-.24l2.8.7a1 1 0 0 1 .76.97V16.92z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span className="text-muted-foreground">۰۲۱-۴۴۴۴۴۴۴۴</span>
+                  <span className="text-muted-foreground">۰۹۳۳۵۱۶۸۴۱۳</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center">
@@ -197,10 +197,17 @@ export function Footer() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-4"
+                className="flex items-center gap-2"
               >
-                <a href="/privacy" className="text-sm text-muted-foreground hover:text-cyan-500 transition-colors">حریم خصوصی</a>
-                <a href="/terms" className="text-sm text-muted-foreground hover:text-cyan-500 transition-colors">شرایط استفاده</a>
+                <span className="text-sm text-muted-foreground">طراحی و توسعه:</span>
+                <a 
+                  href="https://ringe.ir" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-sm text-muted-foreground hover:text-cyan-500 transition-colors"
+                >
+                  تیم رینگ
+                </a>
               </motion.div>
             </div>
           </div>

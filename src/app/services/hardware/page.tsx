@@ -23,10 +23,6 @@ export default function HardwareServices() {
               <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">تجهیزات مطمئن برای زیرساخت پایدار</h1>
               <p className="text-lg text-muted-foreground mb-6 max-w-2xl">تامین، نصب و پشتیبانی سرورها، ذخیره‌سازی و تجهیزات شبکه با گارانتی و خدمات پس از فروش حرفه‌ای.</p>
 
-              <div className="flex gap-3 flex-col sm:flex-row">
-                <Button className="rounded-xl"><a href="#contact">درخواست قیمت</a></Button>
-                <Button className="rounded-xl bg-background/10 border"><a href="#cases">مشاهده پروژه‌ها</a></Button>
-              </div>
             </div>
 
             <div className="flex items-center justify-center">
@@ -48,22 +44,76 @@ export default function HardwareServices() {
 
           <motion.section id="offerings" className="py-8 lg:py-16">
             <h2 className="text-2xl font-bold mb-6">محصولات و خدمات</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3"><Cpu className="w-5 h-5 text-muted-foreground" /><div className="font-semibold">سرورها</div></div>
-                <p className="text-sm text-muted-foreground">سرورهای رک‌مونت و توریک با کانفیگ سفارشی</p>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M9 9h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M9 13h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M9 17h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">سرور و تجهیزات</h3>
+                <p className="text-sm text-muted-foreground mt-2">فروش و تامین انواع سرور، رک، UPS و قطعات با گارانتی اصلی</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3"><HardDriveIcon className="w-5 h-5 text-muted-foreground" /><div className="font-semibold">ذخیره‌سازی</div></div>
-                <p className="text-sm text-muted-foreground">SAN, NAS و آرشیو‌سازی با تضمین یکپارچگی داده</p>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M3.3 7l8.7 5 8.7-5" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M12 22V12" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">ذخیره‌سازی داده</h3>
+                <p className="text-sm text-muted-foreground mt-2">راهکارهای SAN، NAS و سیستم‌های بکاپ و آرشیو داده</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3"><ServerIcon className="w-5 h-5 text-muted-foreground" /><div className="font-semibold">نصب و خدمات</div></div>
-                <p className="text-sm text-muted-foreground">نصب، پیکربندی، مانیتورینگ و سرویس‌های نگهداری</p>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">نظارت و مانیتورینگ</h3>
+                <p className="text-sm text-muted-foreground mt-2">سیستم‌های مانیتورینگ سرور، شبکه و کنترل دما و رطوبت</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3"><div className="w-5 h-5" /><div className="font-semibold">پشتیبانی و SLA</div></div>
-                <p className="text-sm text-muted-foreground">SLA سفارشی، مانیتورینگ 24/7 و تعمیرات سریع</p>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">پشتیبانی و نگهداری</h3>
+                <p className="text-sm text-muted-foreground mt-2">خدمات پشتیبانی و نگهداری پیشگیرانه با SLA مشخص</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">تعمیر و عیب‌یابی</h3>
+                <p className="text-sm text-muted-foreground mt-2">تعمیر تخصصی سرور، استوریج و تجهیزات شبکه</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M14 2v6h6" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M16 13H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M16 17H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M10 9H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">مستندسازی</h3>
+                <p className="text-sm text-muted-foreground mt-2">تهیه مستندات فنی، راهنمای کاربری و دستورالعمل‌ها</p>
               </div>
             </div>
           </motion.section>
@@ -82,38 +132,6 @@ export default function HardwareServices() {
             </div>
           </motion.section>
 
-          <motion.section id="contact" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">درخواست پیشنهاد فنی و قیمت</h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <form className="space-y-4 bg-card/30 p-6 rounded-xl border">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="نام" />
-                  <Input placeholder="ایمیل" type="email" />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="شرکت" />
-                  <Input placeholder="تلفن" />
-                </div>
-                <div>
-                  <textarea className="w-full min-h-[112px] rounded-xl border bg-background px-3 py-2 text-sm" placeholder="توضیح نیازها" />
-                </div>
-                <div>
-                  <Button className="w-full rounded-xl">ارسال درخواست</Button>
-                </div>
-              </form>
-
-              <div className="space-y-4">
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">تأمین تجهیزات</h3>
-                  <p className="text-muted-foreground">تضمین اصالت و خدمات پس از فروش</p>
-                </div>
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">پشتیبانی فنی</h3>
-                  <p className="text-muted-foreground">پاسخگویی سریع و تعمیرات در محل</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
         </div>
       </main>
 

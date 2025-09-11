@@ -36,7 +36,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-white mb-1">تلفن تماس</h3>
-                      <p className="text-white/80">۰۲۱-۸۸۸۸۸۸۸۸</p>
+                      <p className="text-white/80">۰۹۳۳۵۱۶۸۴۱۳</p>
                     </div>
                   </div>
                   
@@ -56,7 +56,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-white mb-1">آدرس</h3>
-                      <p className="text-white/80">تهران، خیابان ولیعصر</p>
+                      <p className="text-white/80">مشهد، فرامرز عباسی ۴۴، پلاک ۵۳</p>
                     </div>
                   </div>
                 </div>

@@ -23,10 +23,6 @@ export default function NetworkServices() {
               <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">زیرساخت شبکه قابل اعتماد</h1>
               <p className="text-lg text-muted-foreground mb-6 max-w-2xl">پیاده‌سازی شبکه‌های امن، مقیاس‌پذیر و مدیریت‌شده که عملکرد کسب‌وکار شما را تضمین می‌کنند.</p>
 
-              <div className="flex gap-3 flex-col sm:flex-row">
-                <Button className="rounded-xl"><a href="#contact">درخواست بررسی</a></Button>
-                <Button className="rounded-xl bg-background/10 border"><a href="#services">خدمات شبکه</a></Button>
-              </div>
             </div>
 
             <div className="flex items-center justify-center">
@@ -48,22 +44,74 @@ export default function NetworkServices() {
 
           <motion.section id="services" className="py-8 lg:py-16">
             <h2 className="text-2xl font-bold mb-6">خدمات شبکه</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="p-6 rounded-xl border bg-card/30">
-                <h3 className="font-semibold">طراحی و پیاده‌سازی</h3>
-                <p className="text-sm text-muted-foreground mt-2">معماری شبکه، VLAN، وایرلس و کابل‌کشی ساخت‌یافته</p>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 5v14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 19l7-7-7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">طراحی شبکه</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی شبکه‌های LAN و WAN، توپولوژی، مسیریابی و سوئیچینگ</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 15V3m0 12l-4-4m4 4l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">نصب و پیاده‌سازی</h3>
+                <p className="text-sm text-muted-foreground mt-2">پیاده‌سازی زیرساخت شبکه، کابل‌کشی، نصب تجهیزات و راه‌اندازی</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <h3 className="font-semibold">امنیت شبکه</h3>
-                <p className="text-sm text-muted-foreground mt-2">فایروال، IDS/IPS، بررسی آسیب‌پذیری و مدیریت تهدید</p>
+                <p className="text-sm text-muted-foreground mt-2">فایروال، IDS/IPS، VPN و امنیت لایه‌های مختلف شبکه</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M8 21h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M12 17v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
                 <h3 className="font-semibold">مجازی‌سازی</h3>
-                <p className="text-sm text-muted-foreground mt-2">VM، هایپرازور، KVM و بهینه‌سازی منابع</p>
+                <p className="text-sm text-muted-foreground mt-2">راه‌اندازی و مدیریت سرورهای مجازی و زیرساخت ابری</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
-                <h3 className="font-semibold">پشتیبانی مدیریت‌شده</h3>
-                <p className="text-sm text-muted-foreground mt-2"> مانیتورینگ، SLA و رفع مشکلات فوری</p>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 5c0 1.66-4 3-9 3s-9-1.34-9-3 4-3 9-3 9 1.34 9 3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">مدیریت و نگهداری</h3>
+                <p className="text-sm text-muted-foreground mt-2">پشتیبانی 24/7، مانیتورینگ و رفع مشکلات شبکه</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">بهینه‌سازی عملکرد</h3>
+                <p className="text-sm text-muted-foreground mt-2">تحلیل و بهبود کارایی شبکه، کاهش تاخیر و افزایش پهنای باند</p>
               </div>
             </div>
           </motion.section>
@@ -96,38 +144,6 @@ export default function NetworkServices() {
             </div>
           </motion.section>
 
-          <motion.section id="contact" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">درخواست بررسی زیرساخت</h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <form className="space-y-4 bg-card/30 p-6 rounded-xl border">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="نام" />
-                  <Input placeholder="ایمیل" type="email" />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="شرکت" />
-                  <Input placeholder="تلفن" />
-                </div>
-                <div>
-                  <textarea className="w-full min-h-[112px] rounded-xl border bg-background px-3 py-2 text-sm" placeholder="توضیح کوتاه درباره زیرساخت" />
-                </div>
-                <div>
-                  <Button className="w-full rounded-xl">ارسال درخواست</Button>
-                </div>
-              </form>
-
-              <div className="space-y-4">
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">تماس فوری</h3>
-                  <p className="text-muted-foreground">info@abanit.net</p>
-                </div>
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">پشتیبانی</h3>
-                  <p className="text-muted-foreground">SLA و مانیتورینگ 24/7</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
         </div>
       </main>
 

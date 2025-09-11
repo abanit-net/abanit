@@ -25,10 +25,6 @@ export default function UXServices() {
               <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">طراحی تجربه‌ای که کاربران دوست دارند</h1>
               <p className="text-lg text-muted-foreground mb-6 max-w-lg">ما با تحقیق کاربرمحور، پروتوتایپ‌های سریع و تست‌های کاربردپذیری، محصول شما را به سطحی می‌رسانیم که کاربران زمان بیشتری را در آن می‌گذرانند و تبدیل‌ها افزایش می‌یابد.</p>
 
-              <div className="flex gap-3 flex-col sm:flex-row">
-                <Button className="rounded-xl"><a href="#services">خدمات ما</a></Button>
-                <Button className="rounded-xl bg-background/10 border"><a href="#workshop">کارگاه طراحی</a></Button>
-              </div>
             </div>
 
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
@@ -51,34 +47,70 @@ export default function UXServices() {
           {/* Services / Offerings */}
           <motion.section id="services" className="py-8 lg:py-16">
             <h2 className="text-2xl font-bold mb-6">خدمات اختصاصی UX</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3">
-                  <PenTool className="w-5 h-5 text-muted-foreground" />
-                  <div className="font-semibold">طراحی UI</div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M10 17l5-5-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M15 12H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
-                <p className="text-sm text-muted-foreground">طراحی رابط بصری با تمرکز روی دسترسی و زیبایی.</p>
+                <h3 className="font-semibold">تحقیق کاربری</h3>
+                <p className="text-sm text-muted-foreground mt-2">تحقیق و تحلیل رفتار کاربران، پرسونا و سناریوهای استفاده</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3">
-                  <Users className="w-5 h-5 text-muted-foreground" />
-                  <div className="font-semibold">تحقیق کاربری</div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
-                <p className="text-sm text-muted-foreground">مصاحبه، تست و تحلیل رفتار کاربران واقعی.</p>
+                <h3 className="font-semibold">طراحی تجربه کاربری</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی فرایند، معماری اطلاعات و نقشه سایت</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3">
-                  <div className="w-5 h-5" />
-                  <div className="font-semibold">پروتوتایپ</div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M3 9h18" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M9 21V9" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
                 </div>
-                <p className="text-sm text-muted-foreground">پروتوتایپ تعاملی برای اعتبارسنجی سریع ایده‌ها.</p>
+                <h3 className="font-semibold">پروتوتایپ و نمونه‌سازی</h3>
+                <p className="text-sm text-muted-foreground mt-2">ساخت نمونه اولیه تعاملی برای تست و اعتبارسنجی</p>
               </div>
+
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="inline-flex items-center gap-3 mb-3">
-                  <div className="w-5 h-5" />
-                  <div className="font-semibold">سیستم طراحی</div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M12 16v-4M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
                 </div>
-                <p className="text-sm text-muted-foreground">کتابخانه کامپوننت و راهنمای استایل برای توسعه پایدار.</p>
+                <h3 className="font-semibold">تست کاربردپذیری</h3>
+                <p className="text-sm text-muted-foreground mt-2">ارزیابی و بهبود تجربه کاربری با تست‌های واقعی</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">سیستم طراحی</h3>
+                <p className="text-sm text-muted-foreground mt-2">ایجاد و مستندسازی سیستم طراحی یکپارچه</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">طراحی رابط کاربری</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی ظاهر و المان‌های بصری محصول</p>
               </div>
             </div>
           </motion.section>
@@ -139,40 +171,6 @@ export default function UXServices() {
                 <p className="text-muted-foreground">تست‌های ما نشان داد کاربران فرآیند جدید را سریع‌تر درک می‌کنند.</p>
                 <div className="mt-4 font-semibold">مدیر طراحی — شرکت سرویس</div>
               </blockquote>
-            </div>
-          </motion.section>
-
-          {/* Contact + Mini Form */}
-          <motion.section id="contact" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">شروع پروژه UX</h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <form className="space-y-4 bg-card/30 p-6 rounded-xl border">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="نام و نام خانوادگی" />
-                  <Input placeholder="ایمیل" type="email" />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="نام شرکت" />
-                  <Input placeholder="تلفن" />
-                </div>
-                <div>
-                  <textarea className="w-full min-h-[112px] rounded-xl border bg-background px-3 py-2 text-sm" placeholder="خلاصه پروژه" />
-                </div>
-                <div>
-                  <Button className="w-full rounded-xl">ارسال درخواست</Button>
-                </div>
-              </form>
-
-              <div className="space-y-4">
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">همکاری</h3>
-                  <p className="text-muted-foreground">پروژه‌های کوتاه‌مدت، کارگاه و همکاری بلندمدت</p>
-                </div>
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">آدرس</h3>
-                  <p className="text-muted-foreground">تهران، خیابان ولیعصر</p>
-                </div>
-              </div>
             </div>
           </motion.section>
 

@@ -24,24 +24,82 @@ export default function DesignServices() {
 
             <div className="flex items-center justify-center gap-4">
               <Button className="rounded-xl"><a href="#portfolio">مشاهده نمونه‌کار</a></Button>
-              <Button className="rounded-xl bg-background/10 border"><a href="#contact">درخواست پیشنهاد</a></Button>
             </div>
           </motion.section>
 
           <motion.section id="services" className="py-8 lg:py-16">
             <h2 className="text-2xl font-bold mb-6">خدمات ما</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="p-6 rounded-xl border bg-card/30 text-center">
-                <h3 className="font-semibold mb-2">هویت بصری و لوگو</h3>
-                <p className="text-sm text-muted-foreground">طراحی لوگو و راهنمای هویت برند</p>
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 2l7.586 7.586" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="11" cy="11" r="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">طراحی لوگو و برند</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی لوگو، هویت بصری و راهنمای برند</p>
               </div>
-              <div className="p-6 rounded-xl border bg-card/30 text-center">
-                <h3 className="font-semibold mb-2">موشن گرافیک</h3>
-                <p className="text-sm text-muted-foreground">کلیپ‌های معرفی، تیزر و موشن‌گرافیک تبلیغاتی</p>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M12 8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M8 12h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">موشن گرافیک</h3>
+                <p className="text-sm text-muted-foreground mt-2">ساخت انیمیشن و موشن‌گرافیک تبلیغاتی</p>
               </div>
-              <div className="p-6 rounded-xl border bg-card/30 text-center">
-                <h3 className="font-semibold mb-2">طراحی UI/UX</h3>
-                <p className="text-sm text-muted-foreground">طراحی صفحات، پروتوتایپ و تست کاربری</p>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 12H9m12 0H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M12 9v6m0-6v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">طراحی تبلیغات</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی بنر، پوستر و تبلیغات محیطی</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M21.17 8h.013" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">عکاسی تبلیغاتی</h3>
+                <p className="text-sm text-muted-foreground mt-2">عکاسی محصول، صنعتی و تبلیغاتی</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M8 21h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M12 17v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">طراحی وب</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی رابط کاربری سایت و اپلیکیشن</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">طراحی بسته‌بندی</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی بسته‌بندی و لیبل محصولات</p>
               </div>
             </div>
           </motion.section>
@@ -64,38 +122,6 @@ export default function DesignServices() {
             </div>
           </motion.section>
 
-          <motion.section id="contact" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">درخواست پیشنهاد و بودجه</h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <form className="space-y-4 bg-card/30 p-6 rounded-xl border">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="نام" />
-                  <Input placeholder="ایمیل" type="email" />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="شرکت یا وب‌سایت" />
-                  <Input placeholder="تلفن" />
-                </div>
-                <div>
-                  <textarea className="w-full min-h-[112px] rounded-xl border bg-background px-3 py-2 text-sm" placeholder="شرح پروژه و نیازها" />
-                </div>
-                <div>
-                  <Button className="w-full rounded-xl">ارسال درخواست</Button>
-                </div>
-              </form>
-
-              <div className="space-y-4">
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">استراتژی بصری</h3>
-                  <p className="text-muted-foreground">تدوین لحن و زبان بصری برند</p>
-                </div>
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">پکیج‌ها و قیمت‌گذاری</h3>
-                  <p className="text-muted-foreground">پکیج‌های استاندارد و سفارشی برای کسب‌وکارها</p>
-                </div>
-              </div>
-            </div>
-          </motion.section>
         </div>
       </main>
 

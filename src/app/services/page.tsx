@@ -9,12 +9,72 @@ import { colors } from "@/lib/theme"
 
 export default function ServicesIndex() {
   const services = [
-    { href: "/services/web", title: "وب‌سایت (Web)", desc: "طراحی و توسعه سایت‌ها و فروشگاه‌های حرفه‌ای", icon: Monitor },
-    { href: "/services/ai", title: "هوش مصنوعی (AI)", desc: "راهکارهای هوش مصنوعی، پردازش تصویر و NLP", icon: BrainCircuit },
-    { href: "/services/ux", title: "تجربه کاربری (UX)", desc: "طراحی محصول، پروتوتایپ و تست‌های کاربردپذیری", icon: LayoutGrid },
-    { href: "/services/network", title: "شبکه و امنیت", desc: "راهکارهای شبکه، فایروال و زیرساخت امن", icon: Server },
-    { href: "/services/hardware", title: "تجهیزات سخت‌افزاری", desc: "سرور، ذخیره‌سازی و تجهیزات دیتاسنتر", icon: Cpu },
-    { href: "/services/design", title: "طراحی و موشن", desc: "هویت بصری، موشن‌گرافیک و بسته‌بندی", icon: Palette },
+    { 
+      href: "/services/web", 
+      title: "وب‌سایت (Web)", 
+      desc: "طراحی سایت‌های حرفه‌ای و سئو با کیفیت", 
+      icon: Monitor,
+      features: [
+        "طراحی سایت شرکتی و فروشگاه اینترنتی",
+        "بهینه‌سازی سئو و افزایش رتبه در گوگل",
+        "تولید محتوای سئو شده و بک‌لینک"
+      ]
+    },
+    { 
+      href: "/services/ai", 
+      title: "هوش مصنوعی (AI)", 
+      desc: "راهکارهای هوشمند و اتوماسیون فرایندها", 
+      icon: BrainCircuit,
+      features: [
+        "طراحی چت‌بات و دستیار هوشمند",
+        "دسته‌بندی و پردازش تصویر و متن",
+        "اتوماسیون هوشمند فرایندهای تکراری"
+      ]
+    },
+    { 
+      href: "/services/ux", 
+      title: "تجربه کاربری (UX)", 
+      desc: "طراحی محصول، پروتوتایپ و تست‌های کاربردپذیری", 
+      icon: LayoutGrid,
+      features: [
+        "طراحی رابط و تجربه کاربری",
+        "تست‌های کاربردپذیری",
+        "تحقیقات و مصاحبه کاربران"
+      ]
+    },
+    { 
+      href: "/services/network", 
+      title: "شبکه و امنیت", 
+      desc: "راهکارهای شبکه، فایروال و زیرساخت امن", 
+      icon: Server,
+      features: [
+        "طراحی و پیاده‌سازی شبکه",
+        "امنیت و پایش شبکه",
+        "راه‌اندازی VPN و فایروال"
+      ]
+    },
+    { 
+      href: "/services/hardware", 
+      title: "تجهیزات سخت‌افزاری", 
+      desc: "سرور، ذخیره‌سازی و تجهیزات دیتاسنتر", 
+      icon: Cpu,
+      features: [
+        "نصب و راه‌اندازی سرور",
+        "پیکربندی Storage و Backup",
+        "بهینه‌سازی عملکرد سخت‌افزار"
+      ]
+    },
+    { 
+      href: "/services/design", 
+      title: "طراحی و موشن", 
+      desc: "هویت بصری، موشن‌گرافیک و بسته‌بندی", 
+      icon: Palette,
+      features: [
+        "طراحی هویت بصری برند",
+        "ساخت موشن‌گرافیک",
+        "طراحی رابط کاربری UI"
+      ]
+    },
   ]
 
   return (
@@ -53,10 +113,13 @@ export default function ServicesIndex() {
                         </div>
                       </div>
 
-                      <ul className="mt-3 text-sm text-muted-foreground space-y-1">
-                        <li>مشاوره فنی</li>
-                        <li>راه‌اندازی و پیاده‌سازی</li>
-                        <li>پشتیبانی و نگهداری</li>
+                      <ul className="mt-3 text-sm text-muted-foreground space-y-1.5">
+                        {s.features.map((feature, index) => (
+                          <li key={index} className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-cyan-600/70"></span>
+                            {feature}
+                          </li>
+                        ))}
                       </ul>
                     </div>
 
