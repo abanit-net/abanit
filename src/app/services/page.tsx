@@ -104,7 +104,7 @@ export default function ServicesIndex() {
                   <article key={s.href} className="rounded-xl border bg-card/30 p-6 flex flex-col justify-between">
                     <div>
                       <div className="inline-flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-lg bg-slate-100/60 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-lg bg-slate-100/60 dark:bg-slate-800 p-0 flex items-center justify-center">
                           <Icon className="w-6 h-6 text-muted-foreground" />
                         </div>
                         <div>

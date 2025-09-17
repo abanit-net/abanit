@@ -5,34 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import "@/styles/circuit.css"
-
-const clients = [
-  {
-    id: "arkajam",
-    name: "آرکاجم",
-    logo: "/img/Abanit_18-01.png",
-    desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  },
-  {
-    id: "sibshargh",
-    name: "سیب شرق",
-    desc: "پروژه‌های طراحی وب و کمپین‌های برندینگ.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  },
-  {
-    id: "digiactive",
-    name: "دیجی اکتیو",
-    desc: "راه‌اندازی فروشگاه آنلاین و بهینه‌سازی تبدیل.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  },
-  {
-    id: "stocker",
-    name: "استوکر",
-    desc: "طراحی تجربه کاربری و هویت بصری محصولات.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  }
-];
+import clients from '@/lib/clients'
 
 const container = {
   hidden: { opacity: 0 },
@@ -78,7 +51,7 @@ export function Clients() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {clients.map((client) => (
+          {clients.slice(0, 4).map((client) => (
             <motion.div
               key={client.id}
               variants={item}
@@ -87,6 +60,9 @@ export function Clients() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               
               <div className="relative p-6">
+                {client.url ? (
+                  <a href={client.url} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" aria-label={`بازدید سایت ${client.name}`}></a>
+                ) : null}
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h3 className="text-lg font-semibold">{client.name}</h3>
@@ -123,10 +99,10 @@ export function Clients() {
           ))}
         </motion.div>
         
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center relative">
           <Link 
             href="/client" 
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-sm bg-gradient-to-r from-cyan-600 to-cyan-500 text-white shadow transition-colors hover:from-cyan-500 hover:to-cyan-400"
+            className="relative z-20 inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-sm bg-gradient-to-r from-cyan-600 to-cyan-500 text-white shadow transition-colors hover:from-cyan-500 hover:to-cyan-400"
           >
             مشاهده همه مشتریان
           </Link>

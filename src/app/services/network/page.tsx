@@ -14,7 +14,7 @@ export default function NetworkServices() {
           <motion.section className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-12 lg:py-20">
             <div>
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-slate-100 p-3 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 p-3 flex items-center justify-center">
                   <ServerIcon className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground/90 font-medium">شبکه و زیرساخت — طراحی، امنیت، پشتیبانی</span>
@@ -46,7 +46,7 @@ export default function NetworkServices() {
             <h2 className="text-2xl font-bold mb-6">خدمات شبکه</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M12 5v14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

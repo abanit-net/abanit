@@ -1,5 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { TypingAnimation } from "@/components/ui/typing-animation"
 import { useEffect, useState } from "react";
 
@@ -67,21 +68,25 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <Button 
-              size="lg"
-              className="relative group bg-cyan-600/90 hover:bg-cyan-700/90 text-white dark:bg-cyan-700/80 dark:hover:bg-cyan-600/80 rounded-2xl"
-            >
-              <span className="relative z-10">شروع همکاری</span>
-              <div className="absolute inset-0 rounded-2xl bg-primary-foreground/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-right" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="relative group border-primary/20 hover:border-primary rounded-2xl dark:border-primary/30 dark:hover:border-primary/50"
-            >
-              <span className="relative z-10">مشاهده نمونه کارها</span>
-              <div className="absolute inset-0 rounded-2xl bg-primary/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-right" />
-            </Button>
+            <Link href="/info" className="relative group">
+              <Button 
+                size="lg"
+                className="relative group bg-cyan-600/90 hover:bg-cyan-700/90 text-white dark:bg-cyan-700/80 dark:hover:bg-cyan-600/80 rounded-2xl"
+              >
+                <span className="relative z-10">شروع همکاری</span>
+                <div className="absolute inset-0 rounded-2xl bg-primary-foreground/10 scale-x-0 group-hover:scale-x-100 transition-transform origin-right" />
+              </Button>
+            </Link>
+            <Link href="/services" className="relative group">
+              <Button
+                size="lg"
+                variant="outline"
+                className="relative group border-primary/20 hover:border-primary rounded-2xl dark:border-primary/30 dark:hover:border-primary/50"
+              >
+                <span className="relative z-10">مشاهده خدمات</span>
+                <div className="absolute inset-0 rounded-2xl bg-primary/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-right" />
+              </Button>
+            </Link>
           </div>
 
           {/* Stats */}

@@ -3,6 +3,7 @@
 
 
 import { motion } from "framer-motion";
+import { Phone } from "lucide-react";
 
 const SocialIcon = ({ children, label }: { children: React.ReactNode; label: string }) => (
   <motion.div
@@ -102,16 +103,7 @@ export function Footer() {
                 ارائه دهنده خدمات فناوری اطلاعات و راهکارهای دیجیتال برای کسب و کارها با بیش از یک دهه تجربه
               </p>
               <div className="flex gap-4 pt-4">
-                <a href="https://www.linkedin.com/company/abanit" target="_blank" rel="noopener noreferrer">
-                  <SocialIcon label="لینکدین">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" className="stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M6 9H2V21H6V9Z" className="stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" className="stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </SocialIcon>
-                </a>
-                <a href="https://www.instagram.com/abanit.net" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/abanit.net" target="_blank" rel="noopener noreferrer" aria-label="Instagram آبانیت">
                   <SocialIcon label="اینستاگرام">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" className="stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -120,10 +112,24 @@ export function Footer() {
                     </svg>
                   </SocialIcon>
                 </a>
-                <a href="https://twitter.com/abanit_net" target="_blank" rel="noopener noreferrer">
-                  <SocialIcon label="توییتر">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12397C16.6767 2.90125 15.7395 2.95718 14.8821 3.28305C14.0247 3.60892 13.2884 4.19438 12.773 4.95372C12.2575 5.71305 11.9877 6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3Z" className="stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+
+                {/* New contact icons: phone, WhatsApp, Telegram using provided number */}
+                <a href="tel:+989335168213" aria-label="تماس تلفنی آبانیت" className="block">
+                  <SocialIcon label="تماس">
+                    <Phone className="w-5 h-5" />
+                  </SocialIcon>
+                </a>
+                <a href="https://wa.me/989335168213" target="_blank" rel="noopener noreferrer" aria-label="واتساپ آبانیت">
+                  <SocialIcon label="واتساپ">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="w-5 h-5" fill="currentColor">
+                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                  </SocialIcon>
+                </a>
+                <a href="https://t.me/989335168213" target="_blank" rel="noopener noreferrer" aria-label="تلگرام آبانیت">
+                  <SocialIcon label="تلگرام">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="w-5 h-5" fill="currentColor">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
                     </svg>
                   </SocialIcon>
                 </a>

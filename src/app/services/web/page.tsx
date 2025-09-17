@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion"
 import { MonitorIcon, GlobeIcon, CpuIcon, ShoppingCart } from "lucide-react"
+import Image from "next/image"
 import { PageFooter } from "@/components/ui/page-footer"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
 export default function WebServices() {
@@ -21,7 +21,7 @@ export default function WebServices() {
           >
             <div>
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 p-3 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-700 p-3 flex items-center justify-center">
                   <MonitorIcon className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground/90 font-medium">خدمات وب‌سایت — طراحی، توسعه، سئو</span>
@@ -44,8 +44,8 @@ export default function WebServices() {
 
             <div className="w-full flex items-center justify-center">
               <div className="w-full max-w-md bg-background/10 rounded-2xl p-6 border border-primary/5 shadow-sm">
-                <div className="h-44 bg-grid-primary/10 rounded-lg flex items-center justify-center text-muted-foreground">
-                  تصویر یا پیش‌نمایش پروژه
+                <div className="h-44 rounded-lg overflow-hidden flex items-center justify-center">
+                  <Image src="/img/screenshot/استوکر.jpg" alt="پیش‌نمایش استوکر" width={720} height={300} className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <div className="text-sm">
@@ -135,18 +135,32 @@ export default function WebServices() {
           <motion.section id="cases" className="py-8 lg:py-16">
             <h2 className="text-2xl font-bold mb-6">نمونه‌کارها</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((n) => (
-                <article key={n} className="bg-card/30 border border-primary/10 rounded-xl overflow-hidden">
-                  <div className="h-40 bg-grid-primary/10 flex items-center justify-center text-muted-foreground">پیش‌نمایش {n}</div>
-                  <div className="p-4">
-                    <h3 className="font-semibold">پروژه نمونه #{n}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">توضیح کوتاه درباره پروژه و نتیجه کسب‌وکار</p>
-                    <div className="mt-4">
-                      <a href="#" className="text-primary font-medium">مشاهده جزئیات →</a>
-                    </div>
-                  </div>
-                </article>
-              ))}
+              {
+                // List screenshots from public/img/screenshot (exclude استوکر.jpg which is used as hero)
+                [
+                  'موبوتلو.jpg',
+                  'سیب شرق.jpg',
+                  'دیجی اکتیو.jpg',
+                  'داراسرویس.jpg'
+                ].map((file) => {
+                  const name = file.replace(/\.[^/.]+$/, "");
+                  const src = `/img/screenshot/${file}`;
+                  return (
+                    <article key={file} className="bg-card/30 border border-primary/10 rounded-xl overflow-hidden">
+                      <div className="h-40 overflow-hidden">
+                        <Image src={src} alt={name} width={720} height={300} className="w-full h-full object-cover object-top" />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-semibold">{name}</h3>
+                        <p className="text-sm text-muted-foreground mt-2">نمونه‌کار طراحی و توسعه وب</p>
+                        <div className="mt-4">
+                          <a href="#" className="text-primary font-medium">مشاهده جزئیات →</a>
+                        </div>
+                      </div>
+                    </article>
+                  )
+                })
+              }
             </div>
           </motion.section>
 

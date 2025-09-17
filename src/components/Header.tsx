@@ -79,12 +79,14 @@ export function Header() {
           {/* Desktop Actions */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button
-              size="sm"
-              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-4"
-            >
-              تماس با ما
-            </Button>
+            <a href="tel:+989335168413" className="rounded-xl">
+              <Button
+                size="sm"
+                className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-4"
+              >
+                تماس با ما
+              </Button>
+            </a>
           </div>
         </div>
 
@@ -133,12 +135,14 @@ export function Header() {
                     })}
                   </nav>
                   <div className="flex items-center justify-between gap-4 pt-4 border-t">
-                    <Button
-                      className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl flex items-center justify-center gap-2"
-                    >
-                      <Phone className="h-4 w-4" />
-                      تماس با ما
-                    </Button>
+                      <a href="tel:+989335168213" className="flex-1">
+                        <Button
+                          className="flex-1 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl flex items-center justify-center gap-2"
+                        >
+                          <Phone className="h-4 w-4" />
+                          تماس با ما
+                        </Button>
+                      </a>
                     <ThemeToggle />
                   </div>
                 </div>
@@ -159,13 +163,15 @@ export function Header() {
 
           {/* Left: Contact Button */}
           <div className="justify-self-end">
-            <Button
-              size="sm"
-              className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-2 flex items-center gap-2"
-            >
-              <Phone className="h-4 w-4" />
-              تماس
-            </Button>
+            <a href="tel:+989335168213" className="rounded-xl">
+              <Button
+                size="sm"
+                className="bg-primary/10 hover:bg-primary/20 text-primary rounded-xl px-2 flex items-center gap-2"
+              >
+                <Phone className="h-4 w-4" />
+                تماس
+              </Button>
+            </a>
           </div>
         </div>
       </div>

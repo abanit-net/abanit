@@ -4,42 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { colors } from "@/lib/theme"
 import { PageFooter } from "@/components/ui/page-footer"
-
-type Client = {
-  id: string
-  name: string
-  logo?: string
-  desc: string
-  services: string[]
-}
-
-const clients: Client[] = [
-  {
-    id: "arkajam",
-    name: "آرکاجم",
-    logo: "/img/Abanit_18-01.png",
-    desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  },
-  {
-    id: "sibshargh",
-    name: "سیب شرق",
-    desc: "پروژه‌های طراحی وب و کمپین‌های برندینگ.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  },
-  {
-    id: "digiactive",
-    name: "دیجی اکتیو",
-    desc: "راه‌اندازی فروشگاه آنلاین و بهینه‌سازی تبدیل.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  },
-  {
-    id: "stocker",
-    name: "استوکر",
-    desc: "طراحی تجربه کاربری و هویت بصری محصولات.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
-  }
-]
+import clients from '@/lib/clients'
 
 const container = {
   hidden: { opacity: 0, y: 12 },
@@ -81,11 +46,11 @@ export default function ClientsPage() {
                 style={{ backdropFilter: "saturate(120%) blur(8px)" }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center shrink-0 overflow-hidden ring-1 ring-white/10">
+                  <div className="w-16 h-16 rounded-xl bg-white flex items-center justify-center shrink-0 overflow-hidden ring-1 ring-border/20 p-1">
                     {c.logo ? (
-                      <Image src={c.logo} alt={`${c.name} logo`} width={56} height={56} className="object-cover" />
+                      <Image src={c.logo} alt={`${c.name} logo`} width={56} height={56} className="w-full h-full object-contain bg-white" />
                     ) : (
-                      <div className="flex items-center justify-center w-full h-full text-white font-semibold text-lg">{c.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div>
+                      <div className="flex items-center justify-center w-full h-full text-slate-800 font-semibold text-lg">{c.name.split(" ").map(s=>s[0]).slice(0,2).join("")}</div>
                     )}
                   </div>
 

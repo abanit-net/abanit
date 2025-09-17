@@ -119,7 +119,7 @@ function ServiceCard({ service }: { service: Service }) {
           />
 
           <div className="relative z-10">
-            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} p-4 mb-4`}>
+            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} dark:from-slate-800 dark:to-slate-700 p-4 mb-4`}>
               <Icon className="w-full h-full text-white" />
             </div>
             <h3 className="text-xl font-bold mb-2">{service.title}</h3>

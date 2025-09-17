@@ -16,7 +16,7 @@ export default function UXServices() {
           <motion.section className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-12 lg:py-20">
             <div className="order-2 lg:order-1">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-slate-100 p-3 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 p-3 flex items-center justify-center">
                   <LayoutGridIcon className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground/90 font-medium">UI / UX — تحقیق تا تحویل</span>
@@ -49,7 +49,7 @@ export default function UXServices() {
             <h2 className="text-2xl font-bold mb-6">خدمات اختصاصی UX</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="p-6 rounded-xl border bg-card/30">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
                     <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M10 17l5-5-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
