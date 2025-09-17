@@ -6,6 +6,11 @@ import { motion } from "framer-motion";
 import About from "./About";
 import { useRef, useState } from "react";
 
+import dynamic from "next/dynamic";
+const AdBanner = dynamic(() => import('@/components/AdBanner').then(mod => ({ default: mod.default })), {
+  loading: () => <div className="w-full max-w-7xl mx-auto px-6 py-4 animate-pulse bg-gradient-to-r from-gray-100 to-gray-200" />
+});
+
 const services = [
   {
     title: "مشاوره، راه اندازى و پشتیبانى شبکه",
@@ -143,6 +148,7 @@ export function Services() {
     <>
       {/* About is full-bleed and should live outside the constrained container */}
       <About />
+      <AdBanner />
       <section className="py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">

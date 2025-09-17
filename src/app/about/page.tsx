@@ -7,22 +7,22 @@ import { motion } from "framer-motion"
 
 const images = [
   {
-    src: "",
+    src: "/img/photo/p1.png",
     alt: "تیم آبانیت در حال کار",
     caption: "همکاری تیمی"
   },
   {
-    src: "",
+    src: "/img/photo/p3.png",
     alt: "دفتر آبانیت",
     caption: "فضای کار خلاق"
   },
   {
-    src: "",
+    src: "/img/photo/p1.png",
     alt: "جلسه با مشتری",
     caption: "ارتباط با مشتریان"
   },
   {
-    src: "",
+    src: "/img/photo/p3.png",
     alt: "تکنولوژی های مورد استفاده",
     caption: "تکنولوژی های روز"
   }
@@ -111,7 +111,7 @@ export default function AboutPage() {
               className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image 
-                src=""
+                src="/img/photo/p2.png"
                 alt="تیم آبانیت"
                 fill
                 className="object-cover"

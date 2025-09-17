@@ -11,6 +11,9 @@ const Services = dynamic(() => import("@/components/sections/Services").then(mod
 const Clients = dynamic(() => import("@/components/sections/Clients").then(mod => ({ default: mod.Clients })), {
   loading: () => <div className="w-full min-h-[40vh] animate-pulse bg-gradient-to-b from-background/5 to-background/20" />
 });
+const AdBanner = dynamic(() => import('@/components/AdBanner').then(mod => ({ default: mod.default })), {
+  loading: () => <div className="w-full max-w-7xl mx-auto px-6 py-4 animate-pulse bg-gradient-to-r from-gray-100 to-gray-200" />
+});
 const FAQ = dynamic(() => import("@/components/sections/FAQ").then(mod => ({ default: mod.FAQ })), {
   loading: () => <div className="w-full min-h-[60vh] animate-pulse bg-gradient-to-b from-background/5 to-background/20" />
 });
@@ -26,6 +29,7 @@ export default function Home() {
       
       {/* Other sections are loaded when scrolled into view */}
       <div className="relative" id="services">
+        
         <Services />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-transparent opacity-30 pointer-events-none" />
       </div>
