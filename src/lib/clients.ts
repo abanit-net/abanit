@@ -2,9 +2,7 @@ export type Client = {
   id: string
   name: string
   logo?: string
-  url?: string
   desc: string
-  services: string[]
 }
 
 export const clients: Client[] = [
@@ -12,49 +10,63 @@ export const clients: Client[] = [
     id: "stoker",
     name: "استوکر",
     logo: "/img/logo/لوگو استوکر.png",
-    url: "https://stoker.ir/",
-    desc: "سایت فروشگاهی انواع لپ‌تاپ استوک.",
-    services: ["طراحی سایت", "سئو", "تجربه کاربری"]
+    desc: "سایت فروشگاهی انواع لپ‌تاپ استوک."
   },
   {
     id: "mobotelo",
     name: "موبوتلو",
     logo: "/img/logo/موبوتلو.png",
-    url: "https://mobotelo.com/",
     desc: "سایت فروشگاهی موبایل و لوازم جانبی.",
-    services: ["طراحی سایت", "فروشگاه آنلاین", "بهینه‌سازی"]
   },
   {
     id: "sibeshargh",
     name: "سیب شرق",
     logo: "/img/logo/سیب شرق.jpg",
-    url: "https://sibeshargh.com/",
     desc: "سایت خدماتی در حوزه محصولات دیجیتال، فعال‌سازی و تعمیرات.",
-    services: ["طراحی سایت", "خدمات دیجیتال", "پشتیبانی"]
   },
   {
     id: "digiactive",
     name: "دیجی اکتیو",
     logo: "/img/logo/دیجی اکتیو.png",
-    url: "https://digiactive.co/",
     desc: "فروشگاه آنلاین گوشی، تبلت و لوازم جانبی.",
-    services: ["طراحی فروشگاه", "بهینه‌سازی تبدیل", "سئو"]
   },
   {
     id: "daraservicevip",
     name: "دارا سرویس",
     logo: "/img/logo/دارار سرویس.png",
-    url: "https://daraservicevip.ir/",
     desc: "خدمات سیستم‌های گرمایشی و سرمایشی از جمله پکیج.",
-    services: ["طراحی سایت", "سئو", "خدمات B2C"]
   },
   {
     id: "arkajam",
     name: "آرکاجم",
     logo: "/img/logo/آرکاجم.png",
-    url: "https://arkajam.com/",
     desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
-    services: ["طراحی سایت", "سئو", "طراحی گرافیک"]
+  },
+  {
+    id: "mashhad-medical",
+    name: "داﻧﺸﮕﺎه ﻋﻠﻮم ﭘﺰﺷﮑﻰ ﻣﺸﻬﺪ و ﻧﯿﺸﺎﺑﻮر",
+    logo: "",
+    desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
+  },
+  {
+    id: "astan-quds",
+    name: "آﺳﺘﺎن ﻗﺪس رﺿﻮى",
+    desc: "همکاری در پروژه‌های فناوری اطلاعات و خدمات دیجیتال.",
+  },
+  {
+    id: "hoze-honari-tehran",
+    name: "ﺣﻮزه ﻫﻨﺮى ﺗﻬﺮان",
+    desc: "توسعه پلتفرم‌های دیجیتال و سیستم‌های مدیریت محتوا.",
+  },
+  {
+    id: "kahkeshan-noor",
+    name: "ﻣﻮﺳﺴﻪ ﮐﻬﮑﺸﺎن ﻧﻮر ﺗﻬﺮان",
+    desc: "ارائه راهکارهای نرم‌افزاری و خدمات فنی تخصصی.",
+  },
+  {
+    id: "negah-sabz",
+    name: "ﻧﮕﺎه ﺳﺒﺰ",
+    desc: "توسعه سیستم‌های مدیریت و پلتفرم‌های دیجیتال.",
   }
 ]
 

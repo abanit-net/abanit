@@ -140,8 +140,7 @@ export default function WebServices() {
                 [
                   'موبوتلو.jpg',
                   'سیب شرق.jpg',
-                  'دیجی اکتیو.jpg',
-                  'داراسرویس.jpg'
+                  'دیجی اکتیو.jpg'
                 ].map((file) => {
                   const name = file.replace(/\.[^/.]+$/, "");
                   const src = `/img/screenshot/${file}`;
@@ -153,9 +152,6 @@ export default function WebServices() {
                       <div className="p-4">
                         <h3 className="font-semibold">{name}</h3>
                         <p className="text-sm text-muted-foreground mt-2">نمونه‌کار طراحی و توسعه وب</p>
-                        <div className="mt-4">
-                          <a href="#" className="text-primary font-medium">مشاهده جزئیات →</a>
-                        </div>
                       </div>
                     </article>
                   )
@@ -164,66 +160,104 @@ export default function WebServices() {
             </div>
           </motion.section>
 
-          {/* PRICING */}
+          {/* SEO GROWTH */}
           <motion.section className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">پکیج‌ها و تعرفه‌ها</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="p-6 rounded-xl border bg-card/30">
-                <div className="text-lg font-semibold">پکیج پایه</div>
-                <div className="text-3xl font-extrabold mt-4">۴,۹۰۰,۰۰۰ تومان</div>
-                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                  <li>طراحی واکنش‌گرا</li>
-                  <li>صفحات تا ۵ صفحه</li>
-                  <li>پشتیبانی ۱ ماهه</li>
-                </ul>
-                <div className="mt-6">
-                  <Button className="w-full rounded-xl">شروع کنید</Button>
+            <h2 className="text-2xl font-bold mb-6">رشد سئو و رتبه‌گیری در گوگل</h2>
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">افزایش رتبه در نتایج جستجو</h3>
+                <p className="text-muted-foreground mb-6">
+                  با استراتژی‌های سئو حرفه‌ای، وب‌سایت شما در صفحه اول گوگل قرار می‌گیرد و ترافیک ارگانیک شما تا ۳۰۰٪ افزایش پیدا می‌کند.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                    <span className="text-sm">بهینه‌سازی کلیدواژه‌های هدف</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                    <span className="text-sm">تولید محتوای با کیفیت</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                    <span className="text-sm">لینک‌سازی داخلی و خارجی</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                    <span className="text-sm">بهینه‌سازی فنی و سرعت</span>
+                  </div>
                 </div>
               </div>
-
-              <div className="p-6 rounded-xl border bg-card/30">
-                <div className="text-lg font-semibold">پکیج استاندارد</div>
-                <div className="text-3xl font-extrabold mt-4">۹,۹۰۰,۰۰۰ تومان</div>
-                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                  <li>طراحی اختصاصی</li>
-                  <li>فروشگاه ساده</li>
-                  <li>پشتیبانی ۳ ماهه</li>
-                </ul>
-                <div className="mt-6">
-                  <Button className="w-full rounded-xl">درخواست دمو</Button>
+              
+              <div className="bg-card/30 border rounded-xl p-6">
+                <h4 className="font-semibold mb-4 text-center">نمودار رشد ترافیک ارگانیک</h4>
+                <div className="relative h-48 sm:h-56">
+                  <svg className="w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                    {/* Grid lines */}
+                    <defs>
+                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.1"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                    
+                    {/* Y-axis labels */}
+                    <text x="15" y="25" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">100K</text>
+                    <text x="15" y="75" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">50K</text>
+                    <text x="15" y="125" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">25K</text>
+                    <text x="15" y="175" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">0</text>
+                    
+                    {/* X-axis labels */}
+                    <text x="60" y="195" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">ماه 1</text>
+                    <text x="140" y="195" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">ماه 3</text>
+                    <text x="220" y="195" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">ماه 6</text>
+                    <text x="300" y="195" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">ماه 9</text>
+                    <text x="380" y="195" fontSize="10" fill="currentColor" opacity="0.6" textAnchor="middle">ماه 12</text>
+                    
+                    {/* Growth curve */}
+                    <path 
+                      d="M 40 160 Q 100 140 140 120 T 220 80 T 300 50 T 380 30" 
+                      fill="none" 
+                      stroke="rgb(34, 197, 94)" 
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                    
+                    {/* Area under curve */}
+                    <path 
+                      d="M 40 160 Q 100 140 140 120 T 220 80 T 300 50 T 380 30 L 380 180 L 40 180 Z" 
+                      fill="rgb(34, 197, 94)" 
+                      fillOpacity="0.1"
+                    />
+                    
+                    {/* Data points */}
+                    <circle cx="40" cy="160" r="3" fill="rgb(34, 197, 94)"/>
+                    <circle cx="140" cy="120" r="3" fill="rgb(34, 197, 94)"/>
+                    <circle cx="220" cy="80" r="3" fill="rgb(34, 197, 94)"/>
+                    <circle cx="300" cy="50" r="3" fill="rgb(34, 197, 94)"/>
+                    <circle cx="380" cy="30" r="3" fill="rgb(34, 197, 94)"/>
+                  </svg>
                 </div>
-              </div>
-
-              <div className="p-6 rounded-xl border bg-card/30">
-                <div className="text-lg font-semibold">پکیج حرفه‌ای</div>
-                <div className="text-3xl font-extrabold mt-4">۱۹,۹۰۰,۰۰۰ تومان</div>
-                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                  <li>فروشگاه کامل</li>
-                  <li>سئو پایه</li>
-                  <li>پشتیبانی ۶ ماهه</li>
-                </ul>
-                <div className="mt-6">
-                  <Button className="w-full rounded-xl">تماس برای پیشنهادات</Button>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-green-600">+300%</div>
+                    <div className="text-xs text-muted-foreground">افزایش ترافیک</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-blue-600">صفحه 1</div>
+                    <div className="text-xs text-muted-foreground">رتبه گوگل</div>
+                  </div>
+                  <div className="col-span-2 sm:col-span-1">
+                    <div className="text-2xl font-bold text-purple-600">85%</div>
+                    <div className="text-xs text-muted-foreground">کلیدواژه‌های برتر</div>
+                  </div>
                 </div>
               </div>
             </div>
           </motion.section>
 
-          {/* TESTIMONIALS */}
-          <motion.section className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">نظر مشتریان</h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <blockquote className="p-6 rounded-xl border bg-card/30">
-                <p className="text-muted-foreground">آبانیت برای ما یک وبسایت جذاب ساخت که نرخ تبدیل را تا ۳۵٪ افزایش داد.</p>
-                <div className="mt-4 font-semibold">مدیر عامل — شرکت نمونه</div>
-              </blockquote>
-              <blockquote className="p-6 rounded-xl border bg-card/30">
-                <p className="text-muted-foreground">پشتیبانی سریع و حرفه‌ای. همیشه در دسترس بودند.</p>
-                <div className="mt-4 font-semibold">مدیر بازاریابی — فروشگاه آنلاین</div>
-              </blockquote>
-            </div>
-          </motion.section>
-
+        
 
           {/* FAQ */}
           <motion.section className="py-8 lg:py-16">
@@ -239,6 +273,26 @@ export default function WebServices() {
                   <AccordionContent>بله، پکیج‌های پشتیبانی ماهانه و سالانه ارائه می‌شود.</AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </div>
+          </motion.section>
+
+          {/* CTA Section */}
+          <motion.section 
+            className="py-8 lg:py-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+          >
+            <div className="text-center bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-2xl border">
+              <h3 className="text-xl font-bold mb-4">آماده شروع پروژه هستید؟</h3>
+              <p className="text-muted-foreground mb-6">
+                با ما تماس بگیرید تا مشاوره رایگان دریافت کنید
+              </p>
+              <div className="flex justify-center">
+                <Button className="rounded-xl" asChild>
+                  <a href="/info">شروع پروژه</a>
+                </Button>
+              </div>
             </div>
           </motion.section>
         </div>

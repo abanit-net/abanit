@@ -60,9 +60,6 @@ export function Clients() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               
               <div className="relative p-6">
-                {client.url ? (
-                  <a href={client.url} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" aria-label={`بازدید سایت ${client.name}`}></a>
-                ) : null}
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h3 className="text-lg font-semibold">{client.name}</h3>
@@ -84,16 +81,6 @@ export function Clients() {
                   {client.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {client.services.map((service, index) => (
-                    <span 
-                      key={index}
-                      className="inline-flex items-center rounded-md bg-muted px-2 py-1 text-xs font-medium text-foreground/70 ring-1 ring-inset ring-border/5"
-                    >
-                      {service}
-                    </span>
-                  ))}
-                </div>
               </div>
             </motion.div>
           ))}

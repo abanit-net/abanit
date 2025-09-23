@@ -6,6 +6,7 @@ import { PageFooter } from "@/components/ui/page-footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
+import Image from "next/image"
 
 export default function UXServices() {
   return (
@@ -28,8 +29,16 @@ export default function UXServices() {
             </div>
 
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="w-full max-w-md rounded-2xl bg-gradient-to-br from-white/50 to-background/50 p-6 border shadow-sm">
-                <div className="h-56 bg-grid-primary/5 rounded-lg flex items-center justify-center text-muted-foreground">پیش‌نمایش UI</div>
+              <div className="w-full max-w-md rounded-2xl bg-background/10 from-white/50 to-background/50 p-6 border shadow-sm">
+                <div className="h-44 rounded-md overflow-hidden">
+                  <Image
+                    src="/img/ux.webp"
+                    alt="زیرساخت شبکه"
+                    width={400}
+                    height={176}
+                    className="w-full h-full object-cover rounded-md"
+                  />
+                </div>
                 <div className="mt-4 flex gap-3">
                   <div className="flex-1 text-sm">
                     <div className="text-xs text-muted-foreground">تحقیق</div>
@@ -142,37 +151,6 @@ export default function UXServices() {
             </div>
           </motion.section>
 
-          {/* Case Studies */}
-          <motion.section className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">نمونه‌کارهای UX</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1,2,3].map((n) => (
-                <article key={n} className="bg-card/30 rounded-xl border overflow-hidden">
-                  <div className="h-40 bg-grid-primary/10 flex items-center justify-center text-muted-foreground">کاور {n}</div>
-                  <div className="p-4">
-                    <h3 className="font-semibold">پروژه طراحی #{n}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">خلاصه‌ای از چالش و راه‌حل طراحی</p>
-                    <div className="mt-4"><a href="#" className="text-primary font-medium">مشاهده مطالعه موردی →</a></div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </motion.section>
-
-          {/* Testimonials */}
-          <motion.section className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">مشتریان درباره ما می‌گویند</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <blockquote className="p-6 rounded-xl border bg-card/30">
-                <p className="text-muted-foreground">با بازطراحی تجربه کاربری، نرخ تکمیل فرم‌ها ۴۰٪ افزایش یافت.</p>
-                <div className="mt-4 font-semibold">مدیر محصول — استارتاپ</div>
-              </blockquote>
-              <blockquote className="p-6 rounded-xl border bg-card/30">
-                <p className="text-muted-foreground">تست‌های ما نشان داد کاربران فرآیند جدید را سریع‌تر درک می‌کنند.</p>
-                <div className="mt-4 font-semibold">مدیر طراحی — شرکت سرویس</div>
-              </blockquote>
-            </div>
-          </motion.section>
 
           {/* FAQ */}
           <motion.section className="py-8 lg:py-16">
@@ -188,6 +166,26 @@ export default function UXServices() {
                   <AccordionContent>بله، می‌توانیم نمونه‌کارها و مطالعات موردی را به شما ارایه دهیم.</AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </div>
+          </motion.section>
+
+          {/* CTA Section */}
+          <motion.section 
+            className="py-8 lg:py-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+          >
+            <div className="text-center bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-2xl border">
+              <h3 className="text-xl font-bold mb-4">آماده شروع پروژه هستید؟</h3>
+              <p className="text-muted-foreground mb-6">
+                با ما تماس بگیرید تا مشاوره رایگان دریافت کنید
+              </p>
+              <div className="flex justify-center">
+                <Button className="rounded-xl" asChild>
+                  <a href="/info">شروع پروژه</a>
+                </Button>
+              </div>
             </div>
           </motion.section>
         </div>

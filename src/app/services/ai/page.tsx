@@ -5,6 +5,7 @@ import { BrainCircuitIcon } from "lucide-react"
 import { PageFooter } from "@/components/ui/page-footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image"
 
 export default function AIServices() {
   return (
@@ -33,7 +34,15 @@ export default function AIServices() {
 
             <div className="w-full flex items-center justify-center">
               <div className="w-full max-w-md bg-background/10 rounded-2xl p-6 border shadow-sm">
-                <div className="h-44 bg-grid-primary/5 rounded-lg flex items-center justify-center text-muted-foreground">نمایش مدل</div>
+                <div className="h-44 rounded-lg overflow-hidden">
+                    <Image
+                      src="/img/ai.webp"
+                      alt="هوش مصنوعی"
+                      width={400}
+                      height={176}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <div>
                     <div className="text-xs text-muted-foreground">دقت متوسط</div>
@@ -120,62 +129,91 @@ export default function AIServices() {
             </div>
           </motion.section>
 
-          <motion.section className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">تکنولوژی‌های مورد استفاده</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['React', 'Node.js', 'Django', 'Laravel'].map((tech) => (
-                <div key={tech} className="p-4 rounded-xl border bg-card/30 text-center">
-                  <span className="font-medium">{tech}</span>
-                </div>
-              ))}
-            </div>
-          </motion.section>
-
-          <motion.section id="cases" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">نمونه‌کارها</h2>
+          <motion.section id="ai-models" className="py-8 lg:py-16">
+            <h2 className="text-2xl font-bold mb-6">مدل‌های هوش مصنوعی</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1,2,3].map((n) => (
-                <article key={n} className="bg-card/30 border rounded-xl overflow-hidden">
-                  <div className="h-40 bg-grid-primary/10 flex items-center justify-center text-muted-foreground">نمونه {n}</div>
-                  <div className="p-4">
-                    <h3 className="font-semibold">پروژه هوش مصنوعی #{n}</h3>
-                    <p className="text-sm text-muted-foreground mt-2">توضیح کوتاه و نتیجه‌ی کسب‌وکار</p>
-                    <div className="mt-4"><a href="#" className="text-primary font-medium">جزئیات →</a></div>
-                  </div>
-                </article>
-              ))}
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">ChatGPT</h3>
+                <p className="text-sm text-muted-foreground mt-2">مدل زبانی پیشرفته OpenAI برای گفتگو و تولید محتوا</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 17l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">Claude</h3>
+                <p className="text-sm text-muted-foreground mt-2">دستیار هوشمند Anthropic با قابلیت‌های تحلیل و استدلال</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">Gemini</h3>
+                <p className="text-sm text-muted-foreground mt-2">مدل چندوجهی Google برای متن، تصویر و کد</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">GitHub Copilot</h3>
+                <p className="text-sm text-muted-foreground mt-2">دستیار برنامه‌نویسی هوشمند برای تولید کد</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">Grok</h3>
+                <p className="text-sm text-muted-foreground mt-2">مدل هوش مصنوعی xAI با دسترسی به اطلاعات زمان واقعی</p>
+              </div>
+
+              <div className="p-6 rounded-xl border bg-card/30">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold">مدل‌های سفارشی</h3>
+                <p className="text-sm text-muted-foreground mt-2">طراحی و آموزش مدل‌های اختصاصی برای نیازهای خاص</p>
+              </div>
             </div>
           </motion.section>
 
-          <motion.section id="contact" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">درخواست دمو / مشاوره</h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              <form className="space-y-4 bg-card/30 p-6 rounded-xl border">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="نام" />
-                  <Input placeholder="ایمیل" type="email" />
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input placeholder="شرکت" />
-                  <Input placeholder="تلفن" />
-                </div>
-                <div>
-                  <textarea className="w-full min-h-[112px] rounded-xl border bg-background px-3 py-2 text-sm" placeholder="توضیح کوتاه نیازها" />
-                </div>
-                <div>
-                  <Button className="w-full rounded-xl">ارسال درخواست</Button>
-                </div>
-              </form>
-
-              <div className="space-y-4">
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">تماس</h3>
-                  <p className="text-muted-foreground">info@abanit.net</p>
-                </div>
-                <div className="p-6 rounded-xl border bg-card/30">
-                  <h3 className="font-semibold">زیرساخت</h3>
-                  <p className="text-muted-foreground">Docker, Kubernetes, Cloud</p>
-                </div>
+          {/* CTA Section */}
+          <motion.section 
+            className="py-8 lg:py-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+          >
+            <div className="text-center bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-2xl border">
+              <h3 className="text-xl font-bold mb-4">آماده شروع پروژه هستید؟</h3>
+              <p className="text-muted-foreground mb-6">
+                با ما تماس بگیرید تا مشاوره رایگان دریافت کنید
+              </p>
+              <div className="flex justify-center">
+                <Button className="rounded-xl" asChild>
+                  <a href="/info">شروع پروژه</a>
+                </Button>
               </div>
             </div>
           </motion.section>

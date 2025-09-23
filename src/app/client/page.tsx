@@ -59,16 +59,6 @@ export default function ClientsPage() {
                     <p className="text-sm text-muted-foreground">{c.desc}</p>
                   </div>
                 </div>
-
-                <div className="mt-6 flex items-center justify-between">
-                  <div className="flex flex-wrap gap-2">
-                    {c.services.map((s) => (
-                      <span key={s} className={`inline-flex items-center text-xs px-3 py-1 rounded-full bg-white/6 text-white/90 ${colors.piin.light} ${colors.piin.dark}`}>{s}</span>
-                    ))}
-                  </div>
-
-                  <div className="text-xs text-muted-foreground">همکاری اخیر</div>
-                </div>
               </motion.article>
             ))}
           </motion.section>

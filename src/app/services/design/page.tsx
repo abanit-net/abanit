@@ -23,7 +23,7 @@ export default function DesignServices() {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">طراحی لوگو، هویت برند، بسته‌بندی، ویدیوی معرفی و موشن‌گرافیک با تیم خلاق و متخصص.</p>
 
             <div className="flex items-center justify-center gap-4">
-              <Button className="rounded-xl"><a href="#portfolio">مشاهده نمونه‌کار</a></Button>
+              <Button className="rounded-xl"><a href="#process">مشاهده فرآیند کاری</a></Button>
             </div>
           </motion.section>
 
@@ -104,22 +104,114 @@ export default function DesignServices() {
             </div>
           </motion.section>
 
-          <motion.section id="portfolio" className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">نمونه‌کارها</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-card/30 p-4 rounded-xl border">
-                <div className="h-44 bg-grid-primary/5 rounded-md flex items-center justify-center text-muted-foreground">نمونه‌کار ۱</div>
-                <div className="mt-3 font-medium">لوگو و هویت بصری</div>
-              </div>
-              <div className="bg-card/30 p-4 rounded-xl border">
-                <div className="h-44 bg-grid-primary/5 rounded-md flex items-center justify-center text-muted-foreground">نمونه‌کار ۲</div>
-                <div className="mt-3 font-medium">موشن گرافیک معرفی</div>
-              </div>
-              <div className="bg-card/30 p-4 rounded-xl border">
-                <div className="h-44 bg-grid-primary/5 rounded-md flex items-center justify-center text-muted-foreground">نمونه‌کار ۳</div>
-                <div className="mt-3 font-medium">طراحی UI برای اپلیکیشن</div>
+          <motion.section id="process" className="py-8 lg:py-16">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl font-bold mb-4">فرآیند کاری ما</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                از ایده تا اجرا، هر مرحله را با دقت و حرفه‌ای‌گری طی می‌کنیم
+              </p>
+            </div>
+
+            {/* Process Steps */}
+            <div className="relative">
+              {/* Connection Line - Hidden on mobile */}
+              <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20" />
+              
+              <div className="space-y-8 md:space-y-12">
+                {[
+                  {
+                    step: "01",
+                    title: "مشاوره و بررسی نیاز",
+                    description: "درک کامل از نیازهای شما، تحلیل بازار هدف و تعرین اهداف پروژه",
+                    icon: "💡",
+                    side: "right"
+                  },
+                  {
+                    step: "02", 
+                    title: "تحقیق و ایده‌پردازی",
+                    description: "بررسی رقبا، جمع‌آوری الهام و ایجاد مفاهیم اولیه برای طراحی",
+                    icon: "🔍",
+                    side: "left"
+                  },
+                  {
+                    step: "03",
+                    title: "طراحی و پیش‌نمایش",
+                    description: "ایجاد طرح‌های اولیه، ارائه گزینه‌های مختلف و دریافت بازخورد شما",
+                    icon: "✏️",
+                    side: "right"
+                  },
+                  {
+                    step: "04",
+                    title: "بازنگری و تکمیل",
+                    description: "اعمال تغییرات درخواستی، بهینه‌سازی و آماده‌سازی فایل‌های نهایی",
+                    icon: "⚡",
+                    side: "left"
+                  },
+                  {
+                    step: "05",
+                    title: "تحویل و پشتیبانی",
+                    description: "ارائه فایل‌های نهایی در فرمت‌های مختلف و ارائه راهنمای استفاده",
+                    icon: "🚀",
+                    side: "right"
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className={`flex items-start gap-4 md:gap-8 ${item.side === 'left' ? 'md:flex-row-reverse' : ''}`}
+                    initial={{ opacity: 0, x: item.side === 'left' ? -50 : 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                  >
+                    {/* Icon - Always on left for mobile */}
+                    <div className="relative z-10 flex-shrink-0">
+                      <motion.div
+                        className="w-16 h-16 rounded-full bg-primary/10 dark:bg-primary/20 border-2 border-primary/20 flex items-center justify-center text-2xl shadow-lg"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item.icon}
+                      </motion.div>
+                    </div>
+
+                    {/* Content */}
+                    <div className={`flex-1 ${item.side === 'left' ? 'md:text-right' : ''}`}>
+                      <div className="bg-card/50 p-4 md:p-6 rounded-2xl border backdrop-blur-sm">
+                        <div className={`flex items-center gap-3 mb-3 ${item.side === 'left' ? 'md:flex-row-reverse md:justify-end' : ''}`}>
+                          <span className="px-3 py-1 rounded-lg bg-primary/10 text-primary font-bold text-sm">
+                            {item.step}
+                          </span>
+                          <h3 className="font-bold text-lg">{item.title}</h3>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Spacer for desktop alignment */}
+                    <div className="flex-1 hidden md:block" />
+                  </motion.div>
+                ))}
               </div>
             </div>
+
+            {/* CTA Section */}
+            <motion.div 
+              className="mt-16 text-center bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-2xl border"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2 }}
+            >
+              <h3 className="text-xl font-bold mb-4">آماده شروع پروژه هستید؟</h3>
+              <p className="text-muted-foreground mb-6">
+                با ما تماس بگیرید تا مشاوره رایگان دریافت کنید
+              </p>
+              <div className="flex justify-center">
+                <Button className="rounded-xl" asChild>
+                  <a href="/info">شروع پروژه</a>
+                </Button>
+              </div>
+            </motion.div>
           </motion.section>
 
         </div>

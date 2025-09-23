@@ -10,6 +10,17 @@ import { colors } from "@/lib/theme"
 export default function ServicesIndex() {
   const services = [
     { 
+      href: "/services/network", 
+      title: "شبکه و امنیت", 
+      desc: "راهکارهای شبکه، فایروال و زیرساخت امن", 
+      icon: Server,
+      features: [
+        "طراحی و پیاده‌سازی شبکه",
+        "امنیت و پایش شبکه",
+        "راه‌اندازی VPN و فایروال"
+      ]
+    },
+    { 
       href: "/services/web", 
       title: "وب‌سایت (Web)", 
       desc: "طراحی سایت‌های حرفه‌ای و سئو با کیفیت", 
@@ -32,6 +43,17 @@ export default function ServicesIndex() {
       ]
     },
     { 
+      href: "/services/design", 
+      title: "طراحی و موشن", 
+      desc: "هویت بصری، موشن‌گرافیک و بسته‌بندی", 
+      icon: Palette,
+      features: [
+        "طراحی هویت بصری برند",
+        "ساخت موشن‌گرافیک",
+        "طراحی رابط کاربری UI"
+      ]
+    },
+    { 
       href: "/services/ux", 
       title: "تجربه کاربری (UX)", 
       desc: "طراحی محصول، پروتوتایپ و تست‌های کاربردپذیری", 
@@ -43,17 +65,6 @@ export default function ServicesIndex() {
       ]
     },
     { 
-      href: "/services/network", 
-      title: "شبکه و امنیت", 
-      desc: "راهکارهای شبکه، فایروال و زیرساخت امن", 
-      icon: Server,
-      features: [
-        "طراحی و پیاده‌سازی شبکه",
-        "امنیت و پایش شبکه",
-        "راه‌اندازی VPN و فایروال"
-      ]
-    },
-    { 
       href: "/services/hardware", 
       title: "تجهیزات سخت‌افزاری", 
       desc: "سرور، ذخیره‌سازی و تجهیزات دیتاسنتر", 
@@ -62,17 +73,6 @@ export default function ServicesIndex() {
         "نصب و راه‌اندازی سرور",
         "پیکربندی Storage و Backup",
         "بهینه‌سازی عملکرد سخت‌افزار"
-      ]
-    },
-    { 
-      href: "/services/design", 
-      title: "طراحی و موشن", 
-      desc: "هویت بصری، موشن‌گرافیک و بسته‌بندی", 
-      icon: Palette,
-      features: [
-        "طراحی هویت بصری برند",
-        "ساخت موشن‌گرافیک",
-        "طراحی رابط کاربری UI"
       ]
     },
   ]

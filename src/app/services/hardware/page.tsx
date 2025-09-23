@@ -5,7 +5,7 @@ import { HardDriveIcon, ServerIcon, Cpu } from "lucide-react"
 import { PageFooter } from "@/components/ui/page-footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-
+import Image from "next/image"
 export default function HardwareServices() {
   return (
     <div className="min-h-screen flex flex-col pt-28 md:pt-32">
@@ -27,7 +27,15 @@ export default function HardwareServices() {
 
             <div className="flex items-center justify-center">
               <div className="w-full max-w-md bg-background/10 rounded-2xl p-6 border shadow-sm">
-                <div className="h-44 bg-grid-primary/5 rounded-lg flex items-center justify-center text-muted-foreground">تصویر تجهیز یا رَک</div>
+                <div className="h-44 rounded-lg overflow-hidden">
+                  <Image
+                    src="/img/pc.webp"
+                    alt="قطعات سخت‌افزاری"
+                    width={400}
+                    height={176}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <div>
                     <div className="text-xs text-muted-foreground">تحویل</div>
@@ -129,6 +137,26 @@ export default function HardwareServices() {
                 <h3 className="font-semibold">پروژه ارتقای ذخیره‌سازی Y</h3>
                 <p className="text-sm text-muted-foreground mt-2">انتقال امن داده و پیاده‌سازی راهکارهای بکاپ و آرشیو.</p>
               </article>
+            </div>
+          </motion.section>
+
+          {/* CTA Section */}
+          <motion.section 
+            className="py-8 lg:py-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+          >
+            <div className="text-center bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-2xl border">
+              <h3 className="text-xl font-bold mb-4">آماده شروع پروژه هستید؟</h3>
+              <p className="text-muted-foreground mb-6">
+                با ما تماس بگیرید تا مشاوره رایگان دریافت کنید
+              </p>
+              <div className="flex justify-center">
+                <Button className="rounded-xl" asChild>
+                  <a href="/info">شروع پروژه</a>
+                </Button>
+              </div>
             </div>
           </motion.section>
 
