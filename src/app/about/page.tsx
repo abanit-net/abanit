@@ -16,16 +16,6 @@ const images = [
     alt: "دفتر آبانیت",
     caption: "فضای کار خلاق"
   },
-  {
-    src: "/img/photo/p1.png",
-    alt: "جلسه با مشتری",
-    caption: "ارتباط با مشتریان"
-  },
-  {
-    src: "/img/photo/p3.png",
-    alt: "تکنولوژی های مورد استفاده",
-    caption: "تکنولوژی های روز"
-  }
 ]
 
 const stats = [

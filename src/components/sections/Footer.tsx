@@ -103,7 +103,7 @@ export function Footer() {
                 ارائه دهنده خدمات فناوری اطلاعات و راهکارهای دیجیتال برای کسب و کارها با بیش از یک دهه تجربه
               </p>
               <div className="flex gap-4 pt-4">
-                <a href="https://www.instagram.com/abanit.net" target="_blank" rel="noopener noreferrer" aria-label="Instagram آبانیت">
+                <a href="https://www.instagram.com/Abanit.co" target="_blank" rel="noopener noreferrer" aria-label="Instagram آبانیت">
                   <SocialIcon label="اینستاگرام">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" className="stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -139,7 +139,7 @@ export function Footer() {
             <FooterSection title="خدمات">
               <ul className="space-y-3">
                 <li><FooterLink href="/services/network">راه اندازى و پشتیبانى شبکه</FooterLink></li>
-                <li><FooterLink href="/services/web">طراحی سایت</FooterLink></li>
+                <li><FooterLink href="/services/web">طراحی سایت و سئو</FooterLink></li>
                 <li><FooterLink href="/services/ai">هوش مصنوعی</FooterLink></li>
                 <li><FooterLink href="/services/design">طراحی گرافیک</FooterLink></li>
               </ul>
@@ -203,15 +203,6 @@ export function Footer() {
                 viewport={{ once: true }}
                 className="flex items-center gap-2"
               >
-                <span className="text-sm text-muted-foreground">طراحی و توسعه:</span>
-                <a 
-                  href="https://ringe.ir" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-sm text-muted-foreground hover:text-cyan-500 transition-colors"
-                >
-                  تیم رینگ
-                </a>
               </motion.div>
             </div>
           </div>
