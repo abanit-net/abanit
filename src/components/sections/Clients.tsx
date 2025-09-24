@@ -55,9 +55,9 @@ export function Clients() {
             <motion.div
               key={client.id}
               variants={item}
-              className="group relative rounded-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-card/50 to-card border border-border/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/50"
+              className="group relative rounded-2xl overflow-hidden backdrop-blur-sm bg-gradient-to-br from-card/50 to-card border border-border/50 shadow-lg shadow-black/5 dark:shadow-black/20 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/50"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 shadow-lg"></div>
               
               <div className="relative p-6">
                 <div className="flex items-center justify-between mb-6">

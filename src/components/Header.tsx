@@ -24,6 +24,7 @@ const menuItems = [
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMounted, setIsMounted] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
     setIsMounted(true);
@@ -54,7 +55,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="relative w-24 h-8">
             <Image 
-              src="/img/Abanit_18-01.png" 
+              src="/img/abanit.webp" 
               alt="آبانیت" 
               width={96}
               height={32}
@@ -94,7 +95,7 @@ export function Header() {
         <div className="md:hidden grid grid-cols-3 items-center w-full gap-2">
           {/* Right: Menu Button */}
           <div className="justify-self-start">
-            <Dialog>
+            <Dialog open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <DialogTrigger asChild>
                 <Button
                   variant="ghost"
@@ -109,7 +110,7 @@ export function Header() {
                 <DialogHeader className="p-6 text-right relative border-b">
                   <DialogTitle className="flex justify-end">
                     <Image 
-                      src="/img/Abanit_18-01.png" 
+                      src="/img/abanit.webp" 
                       alt="آبانیت" 
                       width={96}
                       height={32}
@@ -126,7 +127,7 @@ export function Header() {
                           key={item.href}
                           href={item.href}
                           className="w-full px-4 py-3 text-right text-sm font-medium text-foreground/70 hover:text-primary rounded-xl hover:bg-primary/5 transition-all flex items-center justify-end gap-3 hover:gap-4 flex-row-reverse"
-                          onClick={() => (document.querySelector('[role="dialog"] button[aria-label="Close"]') as HTMLButtonElement)?.click()}
+                          onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {item.title}
                           <Icon className="h-5 w-5" />

@@ -21,7 +21,7 @@ export default function WebServices() {
           >
             <div>
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-700 p-3 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 p-3 flex items-center justify-center">
                   <MonitorIcon className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <span className="text-sm text-muted-foreground/90 font-medium">خدمات وب‌سایت — طراحی، توسعه، سئو</span>
