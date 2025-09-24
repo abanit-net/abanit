@@ -154,7 +154,7 @@ export function Header() {
           {/* Center: Logo */}
           <Link href="/" className="relative w-16 h-6 justify-self-center">
             <Image 
-              src="/img/Abanit_18-01.png" 
+              src="/img/abanit.webp" 
               alt="آبانیت" 
               width={64}
               height={24}
