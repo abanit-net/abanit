@@ -193,7 +193,7 @@ export function Footer() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-sm text-muted-foreground text-center md:text-right"
+                className="text-sm text-muted-foreground text-center mx-auto"
               >
                 © {new Date().getFullYear()} آبانیت. تمامی حقوق محفوظ است.
               </motion.div>
