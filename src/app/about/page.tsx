@@ -5,18 +5,7 @@ import { motion } from "framer-motion"
 
 // Moved to layout.tsx since this is a client component now
 
-const images = [
-  {
-    src: "/img/photo/p1.png",
-    alt: "تیم آبانیت در حال کار",
-    caption: "همکاری تیمی"
-  },
-  {
-    src: "/img/photo/p3.png",
-    alt: "دفتر آبانیت",
-    caption: "فضای کار خلاق"
-  },
-]
+
 
 const stats = [
   { number: "۵+", label: "سال تجربه" },
@@ -136,44 +125,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Simple Replacement Section */}
       <section className="py-16">
         <div className="container">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-center mb-12"
+            className="text-3xl font-bold text-center mb-8"
           >
-            نگاهی به فضای کار ما
+            رویکرد کاری ما
           </motion.h2>
-
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="max-w-3xl mx-auto space-y-4 text-muted-foreground leading-relaxed text-center"
           >
-            {images.map((image, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                className="group relative aspect-square rounded-2xl overflow-hidden bg-muted"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="text-white text-sm font-medium">{image.caption}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            <motion.p variants={item}>
+              ما با تمرکز بر نتیجه، فرآیندهای ساده و شفاف، و ارتباط مؤثر با مشتریان، پروژه‌ها را از ایده تا اجرا همراهی می‌کنیم.
+            </motion.p>
+            <motion.p variants={item}>
+              برنامه‌ریزی دقیق، تحویل به‌موقع و پایبندی به کیفیت سه اصل کلیدی در همکاری‌های ماست.
+            </motion.p>
+            <motion.p variants={item}>
+              هدف ما خلق ارزش واقعی برای کسب‌وکار شماست؛ بدون پیچیدگی‌های غیرضروری.
+            </motion.p>
           </motion.div>
         </div>
       </section>

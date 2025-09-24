@@ -45,7 +45,7 @@ export default function WebServices() {
             <div className="w-full flex items-center justify-center">
               <div className="w-full max-w-md bg-background/10 rounded-2xl p-6 border border-primary/5 shadow-sm">
                 <div className="h-44 rounded-lg overflow-hidden flex items-center justify-center">
-                  <Image src="/img/screenshot/استوکر.jpg" alt="پیش‌نمایش استوکر" width={720} height={300} className="w-full h-full object-cover object-top" />
+                  <Image src="/img/screenshot/آرکاجم.png" alt="پیش‌نمایش آرکاجم" width={720} height={300} className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <div className="text-sm">
@@ -140,7 +140,6 @@ export default function WebServices() {
                 [
                   'موبوتلو.jpg',
                   'دیجی اکتیو.jpg',
-                  'آرکاجم.png',
                 ].map((file) => {
                   const name = file.replace(/\.[^/.]+$/, "");
                   const src = `/img/screenshot/${file}`;

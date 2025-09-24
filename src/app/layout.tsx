@@ -6,6 +6,7 @@ import { Template } from "@/components/template";
 import "./globals.css";
 import "../styles/scroll-optimize.css";
 import "../styles/scroll-performance.css";
+import "../styles/circuit.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({

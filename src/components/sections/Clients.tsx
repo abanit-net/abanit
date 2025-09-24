@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
-import "@/styles/circuit.css"
 import clients from '@/lib/clients'
 
 const container = {
@@ -26,7 +25,7 @@ const item = {
 export function Clients() {
   return (
     <section className="relative py-24 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none circuit"></div>
+      <div className="absolute inset-0 pointer-events-none circuit-background"></div>
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
       
       <div className="relative container">
