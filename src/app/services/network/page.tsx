@@ -139,19 +139,6 @@ export default function NetworkServices() {
             </div>
           </motion.section>
 
-          <motion.section className="py-8 lg:py-16">
-            <h2 className="text-2xl font-bold mb-6">مطالعه موردی</h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <article className="bg-card/30 p-6 rounded-xl border">
-                <h3 className="font-semibold">راه‌اندازی شبکه برای شرکت X</h3>
-                <p className="text-sm text-muted-foreground mt-2">طراحی، نصب و پشتیبانی شبکه سازمانی با افزایش پایداری و کاهش قطعی.</p>
-              </article>
-              <article className="bg-card/30 p-6 rounded-xl border">
-                <h3 className="font-semibold">امنیت و IDS برای سرویس Y</h3>
-                <p className="text-sm text-muted-foreground mt-2">تست نفوذ و استقرار سیستم‌های تشخیص نفوذ برای جلوگیری از حملات.</p>
-              </article>
-            </div>
-          </motion.section>
 
           {/* CTA Section */}
           <motion.section 

@@ -215,7 +215,7 @@ export default function ContactPage() {
                   {/* Telegram */}
                   <motion.a
                     variants={socialItem}
-                    href="https://t.me/989335168413"
+                    href="https://t.me/Abanit_Stoker_Admin"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative"

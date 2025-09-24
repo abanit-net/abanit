@@ -139,7 +139,8 @@ export default function WebServices() {
                 // List screenshots from public/img/screenshot (exclude استوکر.jpg which is used as hero)
                 [
                   'موبوتلو.jpg',
-                  'دیجی اکتیو.jpg'
+                  'دیجی اکتیو.jpg',
+                  'آرکاجم.png',
                 ].map((file) => {
                   const name = file.replace(/\.[^/.]+$/, "");
                   const src = `/img/screenshot/${file}`;

@@ -23,7 +23,12 @@ export function Hero() {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 transform-gpu">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/20 will-change-transform" />
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+          style={{ backgroundImage: 'url(/img/wall.webp)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent will-change-transform" />
         <div className="fixed right-1/4 top-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse transform-gpu" />
         <div className="fixed left-1/4 bottom-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700 transform-gpu" />
 
@@ -41,7 +46,7 @@ export function Hero() {
           {/* Main Title with Animation */}
           <br /><br /><br />
           <div 
-            className="relative backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/10 bg-background/30"
+            className="relative backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-primary/10 bg-white/80 dark:bg-background/80"
           >
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-foreground/80 to-foreground text-hero leading-[2.2] sm:leading-[2]">
               <TypingAnimation 
@@ -61,7 +66,7 @@ export function Hero() {
 
           {/* Description */}
           <div className={`transition-all duration-1000 transform ${showDescription ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <p className="max-w-[42rem] leading-[2.2] sm:leading-8 text-muted-foreground text-base sm:text-xl backdrop-blur-sm bg-background/30 p-4 sm:p-6 rounded-2xl border border-primary/10 mx-4 sm:mx-0">
+            <p className="max-w-[42rem] leading-[2.2] sm:leading-8 text-muted-foreground text-base sm:text-xl backdrop-blur-sm bg-white/80 dark:bg-background/80 p-4 sm:p-6 rounded-2xl border border-primary/10 mx-4 sm:mx-0">
               با بیش از یک دهه تجربه در ارائه راهکارهای نرم‌افزاری، به شما کمک می‌کنیم تا کسب‌وکارتان را به سطح بعدی ببرید
             </p>
           </div>
@@ -101,7 +106,7 @@ export function Hero() {
                 style={{
                   animationDelay: `${index * 200}ms`
                 }}
-                className="relative group bg-card/30 hover:bg-card/50 backdrop-blur-sm border border-primary/10 rounded-xl sm:rounded-2xl p-3 sm:p-6 duration-300 hover:scale-105 transition-all animate-fade-up"
+                className="relative group bg-white/90 hover:bg-white/95 dark:bg-card/90 dark:hover:bg-card/95 backdrop-blur-md border border-primary/20 rounded-xl sm:rounded-2xl p-3 sm:p-6 duration-300 hover:scale-105 transition-all animate-fade-up"
               >
                 <div className="font-bold text-xl sm:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-cyan-600 to-cyan-700">
                   {stat.number}

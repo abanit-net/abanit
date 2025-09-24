@@ -10,7 +10,7 @@ export const clients: Client[] = [
     id: "mashhad-medical",
     name: "داﻧﺸﮕﺎه ﻋﻠﻮم ﭘﺰﺷﮑﻰ ﻣﺸﻬد",
     logo: "/img/logo/دانشگاه.jpg",
-    desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
+    desc: "همکاری در حوزه شبکه و امنیت و زیرساخت.",
   },
   {
     id: "astan-quds",
@@ -29,6 +29,12 @@ export const clients: Client[] = [
     name: "ﻣﻮﺳﺴﻪ ﮐﻬﮑﺸﺎن ﻧﻮر ﺗﻬﺮان",
     logo: "/img/logo/کهکشان.png",
     desc: "ارائه راهکارهای نرم‌افزاری و خدمات فنی تخصصی.",
+  },
+  {
+    id: "arkajam",
+    name: "آرکاجم",
+    logo: "/img/logo/آرکاجم.png",
+    desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
   },
   {
     id: "negah-sabz",
@@ -59,12 +65,6 @@ export const clients: Client[] = [
     name: "دیجی اکتیو",
     logo: "/img/logo/دیجی اکتیو.png",
     desc: "فروشگاه آنلاین گوشی، تبلت و لوازم جانبی.",
-  },
-  {
-    id: "arkajam",
-    name: "آرکاجم",
-    logo: "/img/logo/آرکاجم.png",
-    desc: "همکاری در توسعه وب و بهینه‌سازی حضور آنلاین.",
   }
 ]
 

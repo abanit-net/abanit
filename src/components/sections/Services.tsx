@@ -148,7 +148,7 @@ export function Services() {
     <>
       {/* About is full-bleed and should live outside the constrained container */}
       <About />
-      <AdBanner />
+      {/*<AdBanner />*/}
       <section className="py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
